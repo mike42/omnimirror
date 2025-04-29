@@ -1,4 +1,4 @@
-# omnimirror
+# OmniMirror
 
 Notes and snippets on how different types of software repositories / dependency managers work.
 
@@ -50,6 +50,47 @@ Other things to think about:
 
 - Ubuntu PPA's
 - Docker
-- Flatpack
+- Flatpak
 - Snap
 
+## apt
+
+- Ecosystem: Debian, Ubuntu, etc
+- Terminology to check: Architecture, Repository, Release, Distribution, Component, Suite
+  - Debian has a Glossary: https://wiki.debian.org/Glossary
+- Mirror lists for important repositories:
+  - https://www.debian.org/mirror/list
+  - https://launchpad.net/ubuntu/+archivemirrors
+- Alternative repositories
+  - Ubuntu Launchpad PPA's
+  - Various vendor-published repos
+- Download strategies:
+  - rsync
+  - recursive wget
+  - ftpsync scripts
+  - [apt-mirror](https://github.com/apt-mirror/)
+- External documentation:
+  - [Setting up a Debian archive mirror](https://www.debian.org/mirror/ftpmirror) - good background
+- Challenges:
+  - Finding a mirror and enumerating available releases / repositories / architectures programmatically.
+  - Finding out what `oldstable`, `stable`, `testing` currently refer to - can grab metadata and check `codename`.
+  - Once you have found version, `Release` file has architectures (eg. all amd64 arm64 armel armhf i386 mips64el mipsel ppc64el s390x) and Components (eg. main contrib non-free-firmware non-free)
+  - Mixing of packages for many releases in the `pool/` directory makes it hard to reduce download size - options are to mirror everything, or use a tool which can read metadata for the entries we need
+  - Include/exclude of source packages is another thing to consider.
+- Opportunities:
+  - Preserving signed metadata.
+  - apt repos are commonly accessed over HTTP so are cache-friendly.
+  - Mirrors commonly contain an `ls-lR.gz` which could be used to figure out eg. file sizes from a file listing before downloading, or
+  - `Packages` lists out `sha256` and filename + size.
+- Hosting strategies
+  - Just files over HTTP
+  - Both have web interfaces which show things you might otherwise use `apt-file` and `apt search` for.
+    - https://packages.debian.org/search?keywords=gnome-shell
+    - https://launchpad.net/ubuntu/+source/gnome-shell
+- Debian has popcon which could be used to download the most important parts of the repository first.
+  - https://popcon.debian.org/
+  - Packages also have a Priority and Section, inclusion as a dependency of a task* package could be a good way to identify useful things
+  - If A depends B, then B could be downloaded first also.
+- Ubuntu LaunchPad has an API: https://api.launchpad.net/devel/
+- Ubuntu is eg. `plucky`, then `plucky-backports`, `plucky-proposed`, `plucky-security`, , `plucky-updates`.
+- Debian is eg. `bookworm`, then `bookworm-backports-sloppy`, `bookworm-backports`, `bookworm-proposed-updates`, `bookworm-updates`.
