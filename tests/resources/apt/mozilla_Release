@@ -1,0 +1,18 @@
+Origin: namespaces/moz-fx-productdelivery-pr-38b5/repositories/mozilla
+Label: namespaces/moz-fx-productdelivery-pr-38b5/repositories/mozilla
+Suite: mozilla
+Codename: mozilla
+Date: Sun, 11 May 2025 00:27:10 UTC
+Architectures: all amd64 arm64 i386
+Components: main
+Description: Productdelivery Debian Packages
+MD5Sum:
+ 794ff6c7cb0f7f6e66a54321b5bafe3d 4770298 main/binary-all/Packages
+ 35c85000b2cb58aeb022a673c1c18c45 88708 main/binary-amd64/Packages
+ 599f439cb6d1b1c8714f12b5924df451 82000 main/binary-arm64/Packages
+ af77e316476e5234ce95dcbf2ab708fc 85269 main/binary-i386/Packages
+SHA256:
+ ca400ad26a74499b4edab05ad09c5b8b7f1a10d2d9e46fb358f76f201b13e4ce 4770298 main/binary-all/Packages
+ d1eae2a6573bef681621e4f3d21aa6e463f1146178b1275c44c53e619803f0f4 88708 main/binary-amd64/Packages
+ 118251fc9bc065f13a078dc917d3a08a70209d96b8e4fd3565987bfadb61014a 82000 main/binary-arm64/Packages
+ 2b64422c53c090e73e6f444745314d79a4459f9e9932de77847ce29d95fc1a27 85269 main/binary-i386/Packages

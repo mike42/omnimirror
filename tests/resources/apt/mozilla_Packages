@@ -1,0 +1,1230 @@
+Package: firefox
+Version: 137.0.2~build1
+Installed-Size: 264711
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox_137.0.2~build1_amd64_496ec9ec52c5a34445b787823e662b93.deb
+MD5sum: 496ec9ec52c5a34445b787823e662b93
+Priority: optional
+SHA256: b25eb80845a286c74ba7acf8f3e88c92a4226420085ede19cb5358c155d6eb68
+Section: web
+Size: 74268490
+
+Package: firefox
+Version: 138.0~build1
+Installed-Size: 265724
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox_138.0~build1_amd64_ac58ecdc1cdb2ec02e0bbc82c3105bb6.deb
+MD5sum: ac58ecdc1cdb2ec02e0bbc82c3105bb6
+Priority: optional
+SHA256: 766cab153637286ed4b0803c2756ad8d3ce4b1409021f891fe28093403682aa2
+Section: web
+Size: 74568180
+
+Package: firefox
+Version: 138.0.1~build1
+Installed-Size: 265675
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox_138.0.1~build1_amd64_fa8b323f65eb6fa001c15e22398526e5.deb
+MD5sum: fa8b323f65eb6fa001c15e22398526e5
+Priority: optional
+SHA256: 3d3885921f21deb580c7eb53d4677afc2964f2bafbe26c67468cf2ee31ff9b5e
+Section: web
+Size: 74559304
+
+Package: firefox-beta
+Version: 138.0b6~build1
+Installed-Size: 267914
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_138.0b6~build1_amd64_81a7def8e76417d9b0bccfa4dad751d9.deb
+MD5sum: 81a7def8e76417d9b0bccfa4dad751d9
+Priority: optional
+SHA256: f394800f4c81fe64ada9a0c1bf684bd8beaa769612a10a20dc83dcaa28c32e1f
+Section: web
+Size: 75336968
+
+Package: firefox-beta
+Version: 138.0b7~build1
+Installed-Size: 265739
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_138.0b7~build1_amd64_33f353604fad589e4d1dc84e92315bb8.deb
+MD5sum: 33f353604fad589e4d1dc84e92315bb8
+Priority: optional
+SHA256: 90a3b55162c739ade4cfd2b6a25f65dbb060fb8d97beb71d50e0e558747a6d96
+Section: web
+Size: 74554826
+
+Package: firefox-beta
+Version: 138.0b8~build1
+Installed-Size: 265835
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_138.0b8~build1_amd64_6868ea5b4bea69ec733b3559d507c5c0.deb
+MD5sum: 6868ea5b4bea69ec733b3559d507c5c0
+Priority: optional
+SHA256: 0c5b7d2a9e9ef7f01320ecc964bf35938427584aa586c4a07051baa503df28a0
+Section: web
+Size: 74827872
+
+Package: firefox-beta
+Version: 138.0b9~build1
+Installed-Size: 265863
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_138.0b9~build1_amd64_f8e002393a70cd0568910e7dc3fbe888.deb
+MD5sum: f8e002393a70cd0568910e7dc3fbe888
+Priority: optional
+SHA256: 7e6a9ea97b9405749507073721845a9480189a5fde416e4dceca085bbc14064b
+Section: web
+Size: 74621272
+
+Package: firefox-beta
+Version: 139.0b1~build1
+Installed-Size: 274340
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_139.0b1~build1_amd64_4dd3d448dbb5d38d6a0813efe2dbe8ce.deb
+MD5sum: 4dd3d448dbb5d38d6a0813efe2dbe8ce
+Priority: optional
+SHA256: fc109eddc12f246857fe8d0cc34f1dc8c42a15e744ddc59b46dd76c98a498ed7
+Section: web
+Size: 77667664
+
+Package: firefox-beta
+Version: 139.0b2~build1
+Installed-Size: 274173
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_139.0b2~build1_amd64_ab91f48b2b984e9e68fde30164a327bc.deb
+MD5sum: ab91f48b2b984e9e68fde30164a327bc
+Priority: optional
+SHA256: 51f1388fee32ca8a2ba4c99328d0a85e476382f64f1f6ff7ffb059750cc33759
+Section: web
+Size: 77589334
+
+Package: firefox-beta
+Version: 139.0b3~build1
+Installed-Size: 274375
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_139.0b3~build1_amd64_8d895afeaf5a97157149c0e2784695d8.deb
+MD5sum: 8d895afeaf5a97157149c0e2784695d8
+Priority: optional
+SHA256: 0e21bf6c8983b770d6de4c667b087d892025cc9092dbcf5c7abd018a0de5c9f7
+Section: web
+Size: 77429988
+
+Package: firefox-beta
+Version: 139.0b4~build1
+Installed-Size: 274127
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_139.0b4~build1_amd64_5f60d4c6a35631b1c9c02475788b21de.deb
+MD5sum: 5f60d4c6a35631b1c9c02475788b21de
+Priority: optional
+SHA256: 2ce665200d80cfd265838bc0c7999e4e89e90b95bf78c6640e97511d2276e0d4
+Section: web
+Size: 77203740
+
+Package: firefox-beta
+Version: 139.0b5~build1
+Installed-Size: 274324
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_139.0b5~build1_amd64_16605535cb0a07f99f727654ec799152.deb
+MD5sum: 16605535cb0a07f99f727654ec799152
+Priority: optional
+SHA256: 6fe050ff9ad52291d3a2e8519f98e85e65234bccdebdf396b8dcaccbbb887f73
+Section: web
+Size: 77490542
+
+Package: firefox-beta
+Version: 139.0b6~build1
+Installed-Size: 274266
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-beta_139.0b6~build1_amd64_ec3980df94a951a5afbc4698bb3e7d8a.deb
+MD5sum: ec3980df94a951a5afbc4698bb3e7d8a
+Priority: optional
+SHA256: 293ccd15d1bb9c908ea86914b1c9af85aff9bc3ccdcd45deaa5f39d7edc492a3
+Section: web
+Size: 77205870
+
+Package: firefox-devedition
+Version: 138.0b6~build1
+Installed-Size: 268010
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_138.0b6~build1_amd64_3f223809b58355b2c52fecd5cc5e73a2.deb
+MD5sum: 3f223809b58355b2c52fecd5cc5e73a2
+Priority: optional
+SHA256: 0fbb3b7c1c64ad7bb2a933ba8e51d951caaf52e26763b9c901ee2bf142a572e7
+Section: web
+Size: 75393836
+
+Package: firefox-devedition
+Version: 138.0b7~build1
+Installed-Size: 265827
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_138.0b7~build1_amd64_0fa81e429e8676eda477414c3d5c2e6f.deb
+MD5sum: 0fa81e429e8676eda477414c3d5c2e6f
+Priority: optional
+SHA256: 9e0c8e381b7ef413e6b818f8fa12f1a989bed3f430775a4081556549f907ab9b
+Section: web
+Size: 74577770
+
+Package: firefox-devedition
+Version: 138.0b8~build1
+Installed-Size: 265962
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_138.0b8~build1_amd64_18b8c224fc1d7d2fa3b7512ddb58d4b3.deb
+MD5sum: 18b8c224fc1d7d2fa3b7512ddb58d4b3
+Priority: optional
+SHA256: 626bf3a67ff9c841f91ebfb99e6f5f160dd7def9bbbffeda872a32e98fa650fa
+Section: web
+Size: 74916286
+
+Package: firefox-devedition
+Version: 138.0b9~build1
+Installed-Size: 265961
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_138.0b9~build1_amd64_425e81d4d957b34144a31a1b630c6e67.deb
+MD5sum: 425e81d4d957b34144a31a1b630c6e67
+Priority: optional
+SHA256: d81131383d294610234c4cfc7f45503139e583abb39febc63ba2ef7d10b25460
+Section: web
+Size: 74898874
+
+Package: firefox-devedition
+Version: 139.0b1~build1
+Installed-Size: 274553
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_139.0b1~build1_amd64_776c44e61c14b179e2fa3db2b284ecb1.deb
+MD5sum: 776c44e61c14b179e2fa3db2b284ecb1
+Priority: optional
+SHA256: 6cdd165057a04737f313e684c8068a96104be70f51bc29fa0e1d7ce75b0ea33f
+Section: web
+Size: 77494350
+
+Package: firefox-devedition
+Version: 139.0b2~build1
+Installed-Size: 274411
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_139.0b2~build1_amd64_2f61e360627f27d8b7a363210e7c5e45.deb
+MD5sum: 2f61e360627f27d8b7a363210e7c5e45
+Priority: optional
+SHA256: caada0b4af57971b91a01be9c448ae1d6d484d63c579c911330d45766ee0886d
+Section: web
+Size: 77517222
+
+Package: firefox-devedition
+Version: 139.0b3~build1
+Installed-Size: 274591
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_139.0b3~build1_amd64_282acff53acbb5f57e1852c366be532f.deb
+MD5sum: 282acff53acbb5f57e1852c366be532f
+Priority: optional
+SHA256: 58d7a8e423ffa4de7b6ad92713655a6f763c2bb9024e4ecfab667a07b3bfb2be
+Section: web
+Size: 77760046
+
+Package: firefox-devedition
+Version: 139.0b4~build1
+Installed-Size: 274385
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_139.0b4~build1_amd64_0d5686fabfafe36e1d7f9e4c215faa2b.deb
+MD5sum: 0d5686fabfafe36e1d7f9e4c215faa2b
+Priority: optional
+SHA256: 814e4232540658047e144085dd14851ff4d2425813a9950cdc69d512af8d8fc6
+Section: web
+Size: 77511886
+
+Package: firefox-devedition
+Version: 139.0b5~build1
+Installed-Size: 274402
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_139.0b5~build1_amd64_3d08c2ea6184a0d352d5cb107528c106.deb
+MD5sum: 3d08c2ea6184a0d352d5cb107528c106
+Priority: optional
+SHA256: cd666320ac2d0742e892b8d962de1d4e9cf227a8d4b49ea26fcf53af5d9c1d31
+Section: web
+Size: 77737208
+
+Package: firefox-devedition
+Version: 139.0b6~build1
+Installed-Size: 274469
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Developer Edition
+Filename: pool/mozilla/firefox-devedition_139.0b6~build1_amd64_e53178ae4eba1330deb4dc3130085d8e.deb
+MD5sum: e53178ae4eba1330deb4dc3130085d8e
+Priority: optional
+SHA256: 77487dbad45abcab8233f63d6d98f280517bef5d059949bf8cf6b0b404dee1f7
+Section: web
+Size: 77539304
+
+Package: firefox-esr
+Version: 128.8.1esr~build2
+Installed-Size: 249314
+Maintainer: Mozilla Releng <release@mozilla.com>
+Architecture: amd64
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-esr_128.8.1esr~build2_amd64_5f57ed1569085942e4022f0d6b8cd50d.deb
+MD5sum: 5f57ed1569085942e4022f0d6b8cd50d
+Priority: optional
+SHA256: a3e4603733537c76ac6d65dfc07e718b7163e89a3bbec33a6738b2a2a7a2f273
+Section: web
+Size: 70288848
+
+Package: firefox-esr
+Version: 128.9.0esr~build2
+Installed-Size: 249036
+Maintainer: Mozilla Releng <release@mozilla.com>
+Architecture: amd64
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-esr_128.9.0esr~build2_amd64_f0904a3c909f1ac48928299520ecc1d9.deb
+MD5sum: f0904a3c909f1ac48928299520ecc1d9
+Priority: optional
+SHA256: 799d296036995cbe32ce56da6b8b5f652268de87e77c4dcd649fc97197135491
+Section: web
+Size: 70143220
+
+Package: firefox-esr
+Version: 128.10.0esr~build1
+Installed-Size: 249540
+Maintainer: Mozilla Releng <release@mozilla.com>
+Architecture: amd64
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox
+Filename: pool/mozilla/firefox-esr_128.10.0esr~build1_amd64_8705b2a6104032638a769f200929be5e.deb
+MD5sum: 8705b2a6104032638a769f200929be5e
+Priority: optional
+SHA256: 925b351061a4609889fd8e3f984f8863218a8f956993148f1b3d94bd1c0296cf
+Section: web
+Size: 70271190
+
+Package: firefox-nightly
+Version: 139.0a1~20250409210623
+Installed-Size: 274813
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250409210623_amd64_2ddb7f6b184cda416930ed772261a74e.deb
+MD5sum: 2ddb7f6b184cda416930ed772261a74e
+Priority: optional
+SHA256: e76e5758488a6ea569b1342988b218eae9f6e185c8871ec4f35a748a16f326be
+Section: web
+Size: 76868144
+
+Package: firefox-nightly
+Version: 139.0a1~20250410092904
+Installed-Size: 275047
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250410092904_amd64_ac6413821b60303d9f9581423bd02f4e.deb
+MD5sum: ac6413821b60303d9f9581423bd02f4e
+Priority: optional
+SHA256: 09567afc38870854b21e29fd38a15ea4bfd53dbd7263b1f93838d9e0c5a642ec
+Section: web
+Size: 76718350
+
+Package: firefox-nightly
+Version: 139.0a1~20250410163733
+Installed-Size: 274938
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250410163733_amd64_8496cbc7b1154c34ac7aed0583e2e9cf.deb
+MD5sum: 8496cbc7b1154c34ac7aed0583e2e9cf
+Priority: optional
+SHA256: 636a296f83623318a7e2eb3014d66358ed021b53f9d06b321000bea7420df931
+Section: web
+Size: 76920368
+
+Package: firefox-nightly
+Version: 139.0a1~20250411092938
+Installed-Size: 274979
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250411092938_amd64_ec30b33cf082e8a872eb3e70f4b53048.deb
+MD5sum: ec30b33cf082e8a872eb3e70f4b53048
+Priority: optional
+SHA256: 96eaf4ba2825b0309448ead97f87c3000daa268558061d179ef3e37c022a26f3
+Section: web
+Size: 76886132
+
+Package: firefox-nightly
+Version: 139.0a1~20250411214234
+Installed-Size: 275237
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250411214234_amd64_30f17f70ff8d90834f004959582d31fa.deb
+MD5sum: 30f17f70ff8d90834f004959582d31fa
+Priority: optional
+SHA256: cdd6a8967d0b5213731f475273b1512481f2cee7ec522b5cbf2d87ebd5630501
+Section: web
+Size: 76751528
+
+Package: firefox-nightly
+Version: 139.0a1~20250412090848
+Installed-Size: 275148
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250412090848_amd64_e078c0672402ebe2af73ae9c3814c8f2.deb
+MD5sum: e078c0672402ebe2af73ae9c3814c8f2
+Priority: optional
+SHA256: d0231afb4ea0ccae12b34eb584f8bf919322afbeb15d4f960c2c842f667387d6
+Section: web
+Size: 76669612
+
+Package: firefox-nightly
+Version: 139.0a1~20250412211221
+Installed-Size: 275162
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250412211221_amd64_8639c7f413993eff4e11d33c3c7ce99e.deb
+MD5sum: 8639c7f413993eff4e11d33c3c7ce99e
+Priority: optional
+SHA256: 938fe24992148bb621340a31ff006f2a70614fea23678239df093aafe1504701
+Section: web
+Size: 76946430
+
+Package: firefox-nightly
+Version: 139.0a1~20250413095036
+Installed-Size: 275071
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250413095036_amd64_0126afd6c293d093eadd3c8f452b1aba.deb
+MD5sum: 0126afd6c293d093eadd3c8f452b1aba
+Priority: optional
+SHA256: 7dcc43e6bc6567bc1d78ecde1ecf0a30081cd24b7e4d5bb1c91a7b4e6863f806
+Section: web
+Size: 76852414
+
+Package: firefox-nightly
+Version: 139.0a1~20250413210718
+Installed-Size: 275040
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250413210718_amd64_30e02666c762ddf3dadb01d1adeea08b.deb
+MD5sum: 30e02666c762ddf3dadb01d1adeea08b
+Priority: optional
+SHA256: 148e8a8aa844d32e50efffcd949ca910a45978a227b13712b488234b5525de06
+Section: web
+Size: 76933802
+
+Package: firefox-nightly
+Version: 139.0a1~20250414094805
+Installed-Size: 275155
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250414094805_amd64_11d3016a296afbc2982afa8bafdcabf0.deb
+MD5sum: 11d3016a296afbc2982afa8bafdcabf0
+Priority: optional
+SHA256: 6a36b485a832d74b4aba0eb9bcf5457c6e317b3a044aa95401028dba09bf34d9
+Section: web
+Size: 76994714
+
+Package: firefox-nightly
+Version: 139.0a1~20250414211452
+Installed-Size: 275118
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250414211452_amd64_3641e9d9a775d9417776d005d09ecb01.deb
+MD5sum: 3641e9d9a775d9417776d005d09ecb01
+Priority: optional
+SHA256: f816422df016e366ed5fb40c7458016853c98fdb1aabd10839cd4073dda13704
+Section: web
+Size: 76999496
+
+Package: firefox-nightly
+Version: 139.0a1~20250415093646
+Installed-Size: 275083
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250415093646_amd64_0d4e692545e41d7471bbc1c72d4eea65.deb
+MD5sum: 0d4e692545e41d7471bbc1c72d4eea65
+Priority: optional
+SHA256: c81add438976525eec88e00ffc77127261583d6cd1ae6305c42111bde2e88131
+Section: web
+Size: 76715640
+
+Package: firefox-nightly
+Version: 139.0a1~20250415212106
+Installed-Size: 275091
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250415212106_amd64_f1796b9c31afc939c4ba584a4a10609f.deb
+MD5sum: f1796b9c31afc939c4ba584a4a10609f
+Priority: optional
+SHA256: 1381398216cc07e045a629027fcde72e86dc8f44ebcca617e71885903dbaf4a5
+Section: web
+Size: 76967988
+
+Package: firefox-nightly
+Version: 139.0a1~20250416091230
+Installed-Size: 275211
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250416091230_amd64_606cf6ba14008bb86b4e92e41a536baa.deb
+MD5sum: 606cf6ba14008bb86b4e92e41a536baa
+Priority: optional
+SHA256: e51f2925265045d020679e8c0ce9f0638025a2e0dac347f37d9cf0960a25646d
+Section: web
+Size: 76813392
+
+Package: firefox-nightly
+Version: 139.0a1~20250416214320
+Installed-Size: 275164
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250416214320_amd64_ef97a90162ad1b8efb5ce49ea0aba713.deb
+MD5sum: ef97a90162ad1b8efb5ce49ea0aba713
+Priority: optional
+SHA256: c288ae89cf4fe8f5eaaa5d1fc2ce6a7be501a0c19ff4367f8e6f92ea4b3ae9a9
+Section: web
+Size: 76761284
+
+Package: firefox-nightly
+Version: 139.0a1~20250417041246
+Installed-Size: 275308
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250417041246_amd64_1f4024053c70b0c5a2c4179f63bbabe9.deb
+MD5sum: 1f4024053c70b0c5a2c4179f63bbabe9
+Priority: optional
+SHA256: 7b2fb272c994da7f899cbb373d3270d50bc4fe0d5ebb16d34e900de07be68bd0
+Section: web
+Size: 76993922
+
+Package: firefox-nightly
+Version: 139.0a1~20250417163004
+Installed-Size: 275915
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250417163004_amd64_96adbf8a11a0940a1a20b13297661924.deb
+MD5sum: 96adbf8a11a0940a1a20b13297661924
+Priority: optional
+SHA256: a6f654f8b740f853504e565a70b3e55d888a43029b63518e42c5383f0711105a
+Section: web
+Size: 77959794
+
+Package: firefox-nightly
+Version: 139.0a1~20250418091223
+Installed-Size: 275977
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250418091223_amd64_729234f0f9206731e50dd42014a4968c.deb
+MD5sum: 729234f0f9206731e50dd42014a4968c
+Priority: optional
+SHA256: d848135fc09a0db35610441c8b908cfd47c5f704ee7cd09644f07ce63770c9ab
+Section: web
+Size: 78021626
+
+Package: firefox-nightly
+Version: 139.0a1~20250418215014
+Installed-Size: 279784
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250418215014_amd64_3d7db7947b3a1d6dd838c4b7760bd3eb.deb
+MD5sum: 3d7db7947b3a1d6dd838c4b7760bd3eb
+Priority: optional
+SHA256: fd7df329beab5e2c0a132ac6b78d09a94a9e1f3ef75767350be4f23c31190dba
+Section: web
+Size: 78952382
+
+Package: firefox-nightly
+Version: 139.0a1~20250419094613
+Installed-Size: 279794
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250419094613_amd64_c94e8095a95b0c86299555c719f3fe1a.deb
+MD5sum: c94e8095a95b0c86299555c719f3fe1a
+Priority: optional
+SHA256: 128019e4875329a0a9c32bdf4efcd0b5938732e6a699eced8de6ebbd44092356
+Section: web
+Size: 79010628
+
+Package: firefox-nightly
+Version: 139.0a1~20250419204823
+Installed-Size: 279656
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250419204823_amd64_6f41fc47b3d626827c9d8dece0a69728.deb
+MD5sum: 6f41fc47b3d626827c9d8dece0a69728
+Priority: optional
+SHA256: 520060336ac8fb4c8bdd4066cf83707d230b9fe8e3b0dcb2fce266b4faff121f
+Section: web
+Size: 78895434
+
+Package: firefox-nightly
+Version: 139.0a1~20250420080730
+Installed-Size: 279868
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250420080730_amd64_f4ead1808492b07bfe6e0ecc72190109.deb
+MD5sum: f4ead1808492b07bfe6e0ecc72190109
+Priority: optional
+SHA256: 55f4eeb86e420e8779b46d5c04ebc8f90d33ab0c118ff12f9106141ea1a424db
+Section: web
+Size: 78990646
+
+Package: firefox-nightly
+Version: 139.0a1~20250421090405
+Installed-Size: 279791
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250421090405_amd64_c06867b7568580bec3a8d05eaf89887d.deb
+MD5sum: c06867b7568580bec3a8d05eaf89887d
+Priority: optional
+SHA256: 5af3bfd8e7c85972df5f51367f9b83ef564c4f23927f10ca66cc55b14a0abb20
+Section: web
+Size: 78916852
+
+Package: firefox-nightly
+Version: 139.0a1~20250421213526
+Installed-Size: 279805
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250421213526_amd64_f4dfbeba919b69ec42014333a931c4c3.deb
+MD5sum: f4dfbeba919b69ec42014333a931c4c3
+Priority: optional
+SHA256: 67ec9f3f93afdd7672eed7103541979d4b9854113050e28ddf9c2d666c1d925a
+Section: web
+Size: 78553250
+
+Package: firefox-nightly
+Version: 139.0a1~20250422091455
+Installed-Size: 279925
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250422091455_amd64_71ab1d082e2909b1d28bbbae909e58cf.deb
+MD5sum: 71ab1d082e2909b1d28bbbae909e58cf
+Priority: optional
+SHA256: bc85a7f5a4104ae700b43219e5eaa72c7e1c599adc4dd3c4712cfc6079703ef7
+Section: web
+Size: 78808216
+
+Package: firefox-nightly
+Version: 139.0a1~20250422213740
+Installed-Size: 279939
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250422213740_amd64_15e4d1c1f02dc37b55697023dd3a3126.deb
+MD5sum: 15e4d1c1f02dc37b55697023dd3a3126
+Priority: optional
+SHA256: e19ed2c54d27300738ab0218bf99ab6e2cedcc377458fc725a864a2efd5c1820
+Section: web
+Size: 79025428
+
+Package: firefox-nightly
+Version: 139.0a1~20250423092127
+Installed-Size: 279924
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250423092127_amd64_bd4235fd99f7b26d9db2f78ac783ce05.deb
+MD5sum: bd4235fd99f7b26d9db2f78ac783ce05
+Priority: optional
+SHA256: 76b8f0bb0ee23d3680e80ed413a600ddc8620787b899da91120975812e7b5745
+Section: web
+Size: 79004210
+
+Package: firefox-nightly
+Version: 139.0a1~20250423212507
+Installed-Size: 279699
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250423212507_amd64_2f48cfaf81fc61e20307249ee6ab06a1.deb
+MD5sum: 2f48cfaf81fc61e20307249ee6ab06a1
+Priority: optional
+SHA256: a9a3e045e1e47d1190be0bcf263a406752d50dfdcfc0267dd859d0f37c5fcb88
+Section: web
+Size: 78742674
+
+Package: firefox-nightly
+Version: 139.0a1~20250424092126
+Installed-Size: 279360
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250424092126_amd64_675459de2ac61e6e63d6af96ce0fd7b0.deb
+MD5sum: 675459de2ac61e6e63d6af96ce0fd7b0
+Priority: optional
+SHA256: 50b76d1ec272a909015e9cc374480b24fff11e335cd512b434b714dccca78527
+Section: web
+Size: 78679796
+
+Package: firefox-nightly
+Version: 139.0a1~20250424205049
+Installed-Size: 279482
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250424205049_amd64_265ec69ac5af86a034c4aed51c17e2e5.deb
+MD5sum: 265ec69ac5af86a034c4aed51c17e2e5
+Priority: optional
+SHA256: 210ab6e483dcd14bc542f354c6cadb4d076f6fd1e3f23b46dcb9f7af2073811b
+Section: web
+Size: 78740694
+
+Package: firefox-nightly
+Version: 139.0a1~20250425091526
+Installed-Size: 279503
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250425091526_amd64_19415c3f51d9bf5e18b7ad65b1cde067.deb
+MD5sum: 19415c3f51d9bf5e18b7ad65b1cde067
+Priority: optional
+SHA256: fa67a2a4cda6462eb93def4dee86aeaa5355b80487cd66c8a46597a50fdb8473
+Section: web
+Size: 78716454
+
+Package: firefox-nightly
+Version: 139.0a1~20250425212424
+Installed-Size: 279442
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250425212424_amd64_8a6ae137fdf05adedde6748b98702e4b.deb
+MD5sum: 8a6ae137fdf05adedde6748b98702e4b
+Priority: optional
+SHA256: e927a2384047fd315e144aa10db7e293d317c0fdf0d991109fdfecf6e03692a4
+Section: web
+Size: 78694390
+
+Package: firefox-nightly
+Version: 139.0a1~20250426091604
+Installed-Size: 279444
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250426091604_amd64_de58f3f9b830e5909e3019dc5871b4da.deb
+MD5sum: de58f3f9b830e5909e3019dc5871b4da
+Priority: optional
+SHA256: bfb72cc0e46691eec39c75aac5093f600379530dc5593abd6f05a730143474f7
+Section: web
+Size: 78718434
+
+Package: firefox-nightly
+Version: 139.0a1~20250426211843
+Installed-Size: 279343
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250426211843_amd64_9cdc9583c0fe356116ae5b2922b6c54e.deb
+MD5sum: 9cdc9583c0fe356116ae5b2922b6c54e
+Priority: optional
+SHA256: aed806d0eb012c2240b8e19aab7cddd6234b735a90423f2a3abe5791f7dbe1f0
+Section: web
+Size: 78698246
+
+Package: firefox-nightly
+Version: 139.0a1~20250427085921
+Installed-Size: 279397
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250427085921_amd64_895424099b219d66bdb792a485f3f884.deb
+MD5sum: 895424099b219d66bdb792a485f3f884
+Priority: optional
+SHA256: a4b7f151d43fff6fc16b66c924bf1bcfd2ca6acaecdc9daa243967f8e909ba5d
+Section: web
+Size: 78709434
+
+Package: firefox-nightly
+Version: 139.0a1~20250428093632
+Installed-Size: 279491
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_139.0a1~20250428093632_amd64_789ed1318231f348a1a8e123deb1dc17.deb
+MD5sum: 789ed1318231f348a1a8e123deb1dc17
+Priority: optional
+SHA256: 65793047d263f3615b0cd0124e8af5ee29594942573844e33d6aaab6bef0b361
+Section: web
+Size: 78713818
+
+Package: firefox-nightly
+Version: 140.0a1~20250428211601
+Installed-Size: 279524
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250428211601_amd64_ee2c82abe4dfba737a6eb9769ea2c2e4.deb
+MD5sum: ee2c82abe4dfba737a6eb9769ea2c2e4
+Priority: optional
+SHA256: e8db1d8ebbf5f19b8fced2f5a69ecb99331fb4a30543437336fd9282f47391ee
+Section: web
+Size: 78453198
+
+Package: firefox-nightly
+Version: 140.0a1~20250429095232
+Installed-Size: 279588
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250429095232_amd64_bb3a4d10ba6d7c02a73f40fe238d990f.deb
+MD5sum: bb3a4d10ba6d7c02a73f40fe238d990f
+Priority: optional
+SHA256: 9936f6cef920e60531584702e195708e13b0b26d07c1e670ccc4654e411bab99
+Section: web
+Size: 78743064
+
+Package: firefox-nightly
+Version: 140.0a1~20250429231535
+Installed-Size: 279679
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250429231535_amd64_b5fd524b76a9169e5768565fc683a2b1.deb
+MD5sum: b5fd524b76a9169e5768565fc683a2b1
+Priority: optional
+SHA256: c94134f4c6e678aef7eba9eddeb3e17454d4b4a94d36045aa768550deb3a2364
+Section: web
+Size: 78993942
+
+Package: firefox-nightly
+Version: 140.0a1~20250430092515
+Installed-Size: 279723
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250430092515_amd64_d06fb97dc5ba6cde378517025dd5ec6e.deb
+MD5sum: d06fb97dc5ba6cde378517025dd5ec6e
+Priority: optional
+SHA256: f4bdc922209ad676b9ea37da32a28e6f0a396c31b5649959f0c321f0b77182a2
+Section: web
+Size: 78590004
+
+Package: firefox-nightly
+Version: 140.0a1~20250502094430
+Installed-Size: 279940
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250502094430_amd64_d4b5a31d13ea20de4c9b1079adb92cd2.deb
+MD5sum: d4b5a31d13ea20de4c9b1079adb92cd2
+Priority: optional
+SHA256: 5d67471aed2c035f9c30c1705f43bacd96dc11877c5dacc9ad40888444bca671
+Section: web
+Size: 78844372
+
+Package: firefox-nightly
+Version: 140.0a1~20250505090349
+Installed-Size: 279935
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250505090349_amd64_e7686d15547e67cc4c837a40266378bb.deb
+MD5sum: e7686d15547e67cc4c837a40266378bb
+Priority: optional
+SHA256: 0661a256b958ff5ac900562d9e059063fed08f4638697b92fd19a37e189ac15d
+Section: web
+Size: 78991794
+
+Package: firefox-nightly
+Version: 140.0a1~20250505214727
+Installed-Size: 280101
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250505214727_amd64_7ec6340870a8039b47414bcd0203658a.deb
+MD5sum: 7ec6340870a8039b47414bcd0203658a
+Priority: optional
+SHA256: fe1ada9fc0fd499e009863110ae1323c728d9bdf77098ee7adb2c04e44b68f3a
+Section: web
+Size: 78624006
+
+Package: firefox-nightly
+Version: 140.0a1~20250506213802
+Installed-Size: 280119
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250506213802_amd64_bd885fdcb0133f55cbc2ff9ce010e712.deb
+MD5sum: bd885fdcb0133f55cbc2ff9ce010e712
+Priority: optional
+SHA256: db73079d24c9f89e70a98d9a95e666494d52aed3d54a2abe79ffd2a150f91999
+Section: web
+Size: 78824232
+
+Package: firefox-nightly
+Version: 140.0a1~20250507094557
+Installed-Size: 280111
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250507094557_amd64_213ee3771a72ad23fe98a57e1dfe460b.deb
+MD5sum: 213ee3771a72ad23fe98a57e1dfe460b
+Priority: optional
+SHA256: fedcd02fcda55c1b822c323fec96fff991d223754fb4136eb3e387d1691ad989
+Section: web
+Size: 78827556
+
+Package: firefox-nightly
+Version: 140.0a1~20250507164202
+Installed-Size: 280189
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250507164202_amd64_757b0a98ffc26614f2d0d5a02dd798c5.deb
+MD5sum: 757b0a98ffc26614f2d0d5a02dd798c5
+Priority: optional
+SHA256: 34d90b301fcbe9781b8242309eccda75c79219b06a87dd3627a7448971d14592
+Section: web
+Size: 78832976
+
+Package: firefox-nightly
+Version: 140.0a1~20250508092440
+Installed-Size: 280239
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250508092440_amd64_e1fcddd5925322b08cf67aa2231f8e2d.deb
+MD5sum: e1fcddd5925322b08cf67aa2231f8e2d
+Priority: optional
+SHA256: fff8d6ee67b4afb9735b30b94ea542cb653908ed0b22193027b8a951bbbbdb65
+Section: web
+Size: 79117808
+
+Package: firefox-nightly
+Version: 140.0a1~20250508215032
+Installed-Size: 280225
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250508215032_amd64_fbeced5be77a0f21ccfa9a75c773a46f.deb
+MD5sum: fbeced5be77a0f21ccfa9a75c773a46f
+Priority: optional
+SHA256: 8f6541307a5d0d7c707d7203a988922a97f7b8719aaa1efb38d82ef00c869dae
+Section: web
+Size: 78859428
+
+Package: firefox-nightly
+Version: 140.0a1~20250509091031
+Installed-Size: 280146
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250509091031_amd64_5a4a5e8ff08b22d7746abe96a3e1ed21.deb
+MD5sum: 5a4a5e8ff08b22d7746abe96a3e1ed21
+Priority: optional
+SHA256: 3b29a0ac6653edb89e5eebd82c6290b2b54c27cba0aa76a720deff37a59de62e
+Section: web
+Size: 78671484
+
+Package: firefox-nightly
+Version: 140.0a1~20250509211222
+Installed-Size: 280219
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250509211222_amd64_a23d3c4ed458c1c793f696ba103489ab.deb
+MD5sum: a23d3c4ed458c1c793f696ba103489ab
+Priority: optional
+SHA256: e376d8170896d4c259ef824ad786da58304e8d2e5b3758dfeaaca3f863536922
+Section: web
+Size: 78636516
+
+Package: firefox-nightly
+Version: 140.0a1~20250510092934
+Installed-Size: 280123
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250510092934_amd64_ffda226f5082fca6f059666c9fe4a71f.deb
+MD5sum: ffda226f5082fca6f059666c9fe4a71f
+Priority: optional
+SHA256: 62ab4d5e27b9cb2aaf0702e5a139734caf0f63897ae438ab103fa19061da8f0d
+Section: web
+Size: 78627130
+
+Package: firefox-nightly
+Version: 140.0a1~20250510210452
+Installed-Size: 280036
+Maintainer: Mozilla <release@mozilla.com>
+Architecture: amd64
+Provides: gnome-www-browser, www-browser
+Depends: libasound2 (>= 1.0.16), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.18), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.10.0), libdbus-1-3 (>= 1.5.12), libfontconfig1 (>= 2.11), libfreetype6 (>= 2.3.5), libgcc1 (>= 1:4.1.1), libgdk-pixbuf2.0-0 (>= 2.22.0) | libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.0), libgtk-3-0 (>= 3.13.7), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libstdc++6 (>= 4.8.1), libx11-6, libx11-xcb1, libxcb-shm0, libxcb1, libxcomposite1 (>= 1:0.3-1), libxcursor1 (>> 1.1.2), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxi6, libxrandr2 (>= 2:1.4.0), libxrender1
+Description: Mozilla Firefox Nightly
+Filename: pool/mozilla/firefox-nightly_140.0a1~20250510210452_amd64_96ea8c5f2276e78426ed0a013968d87a.deb
+MD5sum: 96ea8c5f2276e78426ed0a013968d87a
+Priority: optional
+SHA256: 4db9003d889e8a5422394d500901ce0455484929fa56e168532c2425a39cad0b
+Section: web
+Size: 78841026
+
+Package: mozillavpn
+Version: 2.24.3~rc20241030191640-static1
+Installed-Size: 54495
+Maintainer: mozilla <vpn@mozilla.com>
+Architecture: amd64
+Depends: libcap2-bin (>= 1:2.32), wireguard (>= 1.0.20200319), wireguard-tools (>= 1.0.20200319), libxcb-cursor0
+Description: A fast, secure and easy to use VPN. Built by the makers of Firefox.
+ Read more on https://vpn.mozilla.org
+Homepage: https://vpn.mozilla.org/
+Filename: pool/mozilla/mozillavpn_2.24.3~rc20241030191640-static1_amd64_3392f83c4525e2b0e13b27444358477c.deb
+MD5sum: 3392f83c4525e2b0e13b27444358477c
+Priority: optional
+SHA256: d83fcec5848b2458d587b87333be5e3ad96e2b2e2185e5cf619ddc8e0a109d8b
+Section: net
+Size: 22066492
+
+Package: mozillavpn
+Version: 2.25.0~rc20250128191920-static1
+Installed-Size: 74366
+Maintainer: mozilla <vpn@mozilla.com>
+Architecture: amd64
+Depends: wireguard (>= 1.0.20200319), wireguard-tools (>= 1.0.20200319), libsecret-1-0, libfreetype6, libfontconfig1, libegl1, libgles2, libxcb-cursor0, libxcb-icccm4, libxcb-keysyms1, libxcb-randr0, libxcb-shape0, libxcb-sync1, libxcb-xfixes0, libx11-6, libx11-xcb1, libxkbcommon0, libxkbcommon-x11-0
+Description: A fast, secure and easy to use VPN. Built by the makers of Firefox.
+ Read more on https://vpn.mozilla.org
+Homepage: https://vpn.mozilla.org/
+Filename: pool/mozilla/mozillavpn_2.25.0~rc20250128191920-static1_amd64_5ccf6b7fa6fffae0dc8eb6c743c01a64.deb
+MD5sum: 5ccf6b7fa6fffae0dc8eb6c743c01a64
+Priority: optional
+SHA256: 89061c8c088827dcccdcaa0e6fb27c19089ab3ed4f93d78c1d42c26d794f184b
+Section: net
+Size: 29591182
+
+Package: mozillavpn
+Version: 2.26.0~rc20250312182859-static1
+Installed-Size: 74754
+Maintainer: mozilla <vpn@mozilla.com>
+Architecture: amd64
+Depends: wireguard (>= 1.0.20200319), wireguard-tools (>= 1.0.20200319), libsecret-1-0, libfreetype6, libfontconfig1, libegl1, libgles2, libxcb-cursor0, libxcb-icccm4, libxcb-keysyms1, libxcb-randr0, libxcb-shape0, libxcb-sync1, libxcb-xfixes0, libx11-6, libx11-xcb1, libxkbcommon0, libxkbcommon-x11-0
+Description: A fast, secure and easy to use VPN. Built by the makers of Firefox.
+ Read more on https://vpn.mozilla.org
+Homepage: https://vpn.mozilla.org/
+Filename: pool/mozilla/mozillavpn_2.26.0~rc20250312182859-static1_amd64_b97e541da51b64e7987c22481297efda.deb
+MD5sum: b97e541da51b64e7987c22481297efda
+Priority: optional
+SHA256: e30d029d22152533a38a67eef2a9c860df2f7cf3f4029505a02fb5943660d143
+Section: net
+Size: 29801032
+
+Package: mozillavpn
+Version: 2.27.0~rc20250411220010-static1
+Installed-Size: 74865
+Maintainer: mozilla <vpn@mozilla.com>
+Architecture: amd64
+Depends: wireguard (>= 1.0.20200319), wireguard-tools (>= 1.0.20200319), libsecret-1-0, libfreetype6, libfontconfig1, libegl1, libgles2, libxcb-cursor0, libxcb-icccm4, libxcb-keysyms1, libxcb-randr0, libxcb-shape0, libxcb-sync1, libxcb-xfixes0, libx11-6, libx11-xcb1, libxkbcommon0, libxkbcommon-x11-0
+Description: A fast, secure and easy to use VPN. Built by the makers of Firefox.
+ Read more on https://vpn.mozilla.org
+Homepage: https://vpn.mozilla.org/
+Filename: pool/mozilla/mozillavpn_2.27.0~rc20250411220010-static1_amd64_d401d20133ea75c258a77b0285ff5ef3.deb
+MD5sum: d401d20133ea75c258a77b0285ff5ef3
+Priority: optional
+SHA256: 4b2d005c6cb787d0e665e67811082bc54e1007dec1cd62ecc47e717badf6209d
+Section: net
+Size: 29822172
