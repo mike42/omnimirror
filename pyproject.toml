@@ -2,7 +2,7 @@
 requires-python = ">= 3.8"
 name = "omnimirror"
 version = "0.1.0"
-dependencies = ["click"]
+dependencies = ["click", "python-debian"]
 
 [project.scripts]
 omnimirror-apt = "omnimirror.cli_apt:main"
