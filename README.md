@@ -1,5 +1,7 @@
 # OmniMirror
 
+![CI](https://github.com/mike42/omnimirror/actions/workflows/ci.yml/badge.svg)](https://github.com/mike42/omnimirror/actions/workflows/ci.yml)
+
 Notes and snippets on how different types of software repositories / dependency managers work.
 
 ## Ideas to look at
