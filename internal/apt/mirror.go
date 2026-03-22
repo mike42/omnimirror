@@ -30,19 +30,24 @@ func Mirror(cfg MirrorConfig) error {
 		return fmt.Errorf("creating directory manager: %w", err)
 	}
 
+	// Phase 1: Stage metadata for all suites.
 	for _, suite := range cfg.Suites {
-		if err := mirrorSuite(dm, baseURL, suite, cfg); err != nil {
-			return fmt.Errorf("mirroring suite %q: %w", suite, err)
+		if err := stageSuiteMetadata(dm, baseURL, suite, cfg); err != nil {
+			return fmt.Errorf("staging metadata for suite %q: %w", suite, err)
 		}
 	}
 
-	return nil
+	// Phase 2: Content download (TODO: cross-suite .deb deduplication).
+
+	// Phase 3: Commit all staged metadata.
+	return dm.Commit()
 }
 
-func mirrorSuite(dm *download.DirectoryManager, baseURL, suite string, cfg MirrorConfig) error {
+func stageSuiteMetadata(dm *download.DirectoryManager, baseURL, suite string, cfg MirrorConfig) error {
 	suiteURL := baseURL + "/dists/" + suite
 
 	// Stage release metadata files.
+	log.Printf("Staging release files for suite %s", suite)
 	release, err := fetchAndStageRelease(dm, suiteURL, suite)
 	if err != nil {
 		return err
@@ -54,52 +59,31 @@ func mirrorSuite(dm *download.DirectoryManager, baseURL, suite string, cfg Mirro
 	// Always include "all" architecture.
 	archs = ensureContains(archs, "all")
 
-	log.Printf("Suite %s: components=%v, architectures=%v", suite, components, archs)
+	log.Printf("Staging metadata for %s: components=%v, architectures=%v", suite, components, archs)
 
-	// Stage Packages index files for each component/arch combination.
-	for _, comp := range components {
-		for _, arch := range archs {
-			indexPath := fmt.Sprintf("%s/binary-%s/Packages", comp, arch)
-			relPath := fmt.Sprintf("dists/%s/%s", suite, indexPath)
+	// We will download all metadata, TODO filter this..
+	entries := release.SHA256
 
-			// Look up the expected checksum from the Release file.
-			hash, ok := findSHA256(release.SHA256, indexPath)
-			if !ok {
-				log.Printf("Skipping %s (not listed in Release)", relPath)
-				continue
-			}
+	for _, entry := range entries {
+		relPath := fmt.Sprintf("dists/%s/%s", suite, entry.Filename)
+		entryURL := suiteURL + "/" + entry.Filename
+		log.Printf("Fetching %s", entryURL)
 
-			indexURL := suiteURL + "/" + indexPath
-			log.Printf("Fetching %s", indexURL)
-
-			body, err := httpGet(indexURL)
-			if err != nil {
-				log.Printf("Warning: could not fetch %s: %v", indexURL, err)
-				continue
-			}
-			if err := dm.StageMetadata(relPath, body); err != nil {
-				body.Close()
-				return fmt.Errorf("staging %s: %w", relPath, err)
-			}
-			body.Close()
-
-			_ = hash // TODO: verify Packages file checksum after staging
+		body, err := httpGet(entryURL)
+		if err != nil {
+			log.Printf("Warning: could not fetch %s: %v", entryURL, err)
+			continue
 		}
+		if err := dm.StageMetadata(relPath, body); err != nil {
+			body.Close()
+			return fmt.Errorf("staging %s: %w", relPath, err)
+		}
+		body.Close()
+
+		_ = entry // TODO: verify file checksum after staging
 	}
 
-	if cfg.DryRun {
-		log.Printf("Dry run: skipping content download for suite %s", suite)
-		return dm.Commit()
-	}
-
-	// TODO: implement content download logic.
-	// - Open each staged Packages file with dm.ReadStagedFile()
-	// - Parse with control.ParseBinaryIndex() to get []BinaryIndex
-	// - For each package, check dm.FileExists(pkg.Filename, pkg.Size)
-	// - Download missing .deb files with dm.WriteContentFile()
-	// - Use errgroup with bounded concurrency for parallel downloads
-
-	return dm.Commit()
+	return nil
 }
 
 // fetchAndStageRelease downloads and stages the release metadata files for a suite.
@@ -161,7 +145,7 @@ type Release struct {
 	Architectures string
 	Components    string
 	Date          string
-	MD5Sum        []control.MD5FileHash  `delim:"\n" strip:"\n\r\t "`
+	MD5Sum        []control.MD5FileHash    `delim:"\n" strip:"\n\r\t "`
 	SHA256        []control.SHA256FileHash `delim:"\n" strip:"\n\r\t "`
 }
 
@@ -179,14 +163,54 @@ func parseRelease(data []byte) (*Release, error) {
 	return &release, nil
 }
 
-// findSHA256 looks up a file's SHA256 hash entry in the release metadata.
-func findSHA256(hashes []control.SHA256FileHash, path string) (control.SHA256FileHash, bool) {
-	for _, h := range hashes {
-		if h.Filename == path {
-			return h, true
-		}
+// filterReleaseEntries returns the SHA256 entries that match the given components and architectures.
+func filterReleaseEntries(entries []control.SHA256FileHash, components, archs []string) []control.SHA256FileHash {
+	compSet := make(map[string]struct{}, len(components))
+	for _, c := range components {
+		compSet[c] = struct{}{}
 	}
-	return control.SHA256FileHash{}, false
+	archSet := make(map[string]struct{}, len(archs))
+	for _, a := range archs {
+		archSet[a] = struct{}{}
+	}
+
+	var result []control.SHA256FileHash
+	for _, e := range entries {
+		parts := strings.SplitN(e.Filename, "/", 2)
+		if len(parts) < 2 {
+			continue
+		}
+		comp := parts[0]
+		rest := parts[1]
+
+		// Component must match.
+		if _, ok := compSet[comp]; !ok {
+			continue
+		}
+
+		// Exclude source entries.
+		// TODO should be configurable
+		if strings.HasPrefix(rest, "source/") {
+			continue
+		}
+
+		// Filter out architecture-specific entries for things we are not mirroring
+		if strings.HasPrefix(rest, "binary-") {
+			// Extract arch from "binary-{arch}/..."
+			archAndFile := strings.TrimPrefix(rest, "binary-")
+			slashIdx := strings.Index(archAndFile, "/")
+			if slashIdx < 0 {
+				continue
+			}
+			arch := archAndFile[:slashIdx]
+			if _, ok := archSet[arch]; !ok {
+				continue
+			}
+		}
+
+		result = append(result, e)
+	}
+	return result
 }
 
 // filterOrAll returns the filter list if non-empty, otherwise returns all available values.

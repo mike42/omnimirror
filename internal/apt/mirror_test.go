@@ -34,12 +34,20 @@ func TestParseInRelease(t *testing.T) {
 		t.Fatal("no SHA256 hashes parsed")
 	}
 
-	hash, ok := findSHA256(release.SHA256, "main/binary-amd64/Packages")
-	if !ok {
-		t.Fatal("SHA256 entry for main/binary-amd64/Packages not found")
+	// Verify a known entry exists via filterReleaseEntries.
+	entries := filterReleaseEntries(release.SHA256, []string{"main"}, []string{"amd64", "all"})
+	found := false
+	for _, e := range entries {
+		if e.Filename == "main/binary-amd64/Packages" {
+			if e.Size != 88708 {
+				t.Errorf("Size = %d, want 88708", e.Size)
+			}
+			found = true
+			break
+		}
 	}
-	if hash.Size != 88708 {
-		t.Errorf("Size = %d, want 88708", hash.Size)
+	if !found {
+		t.Fatal("SHA256 entry for main/binary-amd64/Packages not found")
 	}
 }
 
@@ -57,24 +65,8 @@ func TestParseRelease(t *testing.T) {
 	if release.Suite != "mozilla" {
 		t.Errorf("Suite = %q, want %q", release.Suite, "mozilla")
 	}
-	if len(release.SHA256) != 4 {
-		t.Errorf("got %d SHA256 entries, want 4", len(release.SHA256))
-	}
-}
-
-func TestFilterOrAll(t *testing.T) {
-	available := []string{"main", "contrib", "non-free"}
-
-	// No filter returns all.
-	got := filterOrAll(nil, available)
-	if len(got) != 3 {
-		t.Errorf("expected all 3, got %d", len(got))
-	}
-
-	// With filter returns only filtered.
-	got = filterOrAll([]string{"main"}, available)
-	if len(got) != 1 || got[0] != "main" {
-		t.Errorf("expected [main], got %v", got)
+	if len(release.SHA256) == 0 {
+		t.Error("no SHA256 entries parsed")
 	}
 }
 

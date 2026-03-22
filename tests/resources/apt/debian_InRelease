@@ -1,0 +1,253 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Origin: Debian
+Label: Debian
+Suite: stable
+Version: 13.4
+Codename: trixie
+Changelogs: https://metadata.ftp-master.debian.org/changelogs/@CHANGEPATH@_changelog
+Date: Sat, 14 Mar 2026 11:25:23 UTC
+Acquire-By-Hash: yes
+No-Support-for-Architecture-all: Packages
+Architectures: all amd64 arm64 armel armhf i386 ppc64el riscv64 s390x
+Components: main contrib non-free-firmware non-free
+Description: Debian 13.4 Released 14 March 2026
+SHA256:
+ ae508754e2ebad9d1d1090248c80258c0c41b1344697bfa12cff3d0bf56e78a4  1959586 contrib/Contents-all
+ bf0da030de5025ba94c48c76e352b3639f9948e876c4d6f8b7105b49873173a2   134039 contrib/Contents-all.gz
+ 5890b46f6a7b4194334657801608705c251fa592f50f68d16c007eb5581ee20b  3059725 contrib/Contents-amd64
+ 630d65a9d659333641ab82ddc1623eff607e7ba8e8f1bcbbb8c63906bc58f7c7   187747 contrib/Contents-amd64.gz
+ a907d98592312a27cede5c179674df920f0fb6f21df83e012f5ef9a509680c3c  1641886 contrib/Contents-arm64
+ 7ed7175acc7ecb0cc871281153763d822dc3cebd08f005627d287b47f8ade709   114902 contrib/Contents-arm64.gz
+ daf296d6d029a7e7817940e19f9aee845d4ceed26e2968174e0b70d913778804 10628848 contrib/Contents-source
+ 6909a11e6a2ed5da8ad0304277ad850e801dd1fefd12cf7f40a6c368ce9e133e   798791 contrib/Contents-source.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 contrib/Contents-udeb-all
+ f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 contrib/Contents-udeb-all.gz
+ 7e37c13b45e8502eeb61994430a03aa4d1dc1da9330a2fafbd35ce5a480a2d54       93 contrib/Contents-udeb-amd64
+ ee4e2117297557383a81e9f37e0083632e182172fd1131005163a4b31af3c9ef       68 contrib/Contents-udeb-amd64.gz
+ 7e37c13b45e8502eeb61994430a03aa4d1dc1da9330a2fafbd35ce5a480a2d54       93 contrib/Contents-udeb-arm64
+ ee4e2117297557383a81e9f37e0083632e182172fd1131005163a4b31af3c9ef       68 contrib/Contents-udeb-arm64.gz
+ 06ddaa4e7ebbeffc1e4c99df73f43914a57a16dfbebb6e20f260ed2b6f4c7ca4    90246 contrib/binary-all/Packages
+ c4f82cbaf619e9dec08d3d410dd11f07abf895c0870d5a0ce173b562bc7ed8a2    26758 contrib/binary-all/Packages.gz
+ 26327f1419088bb6a15d31faa55170369946331b2008db777d1ea3287959d27e    23188 contrib/binary-all/Packages.xz
+ a51aa983aa4be25f0d3446a8adc85c7f2697f1a6a1a1c1f44ab37ba7145eaad4      117 contrib/binary-all/Release
+ 4699ac4502079b1dcbb5933d02c3dc31ae2a67dfbfdde4f4adf69d9382682dc4   233878 contrib/binary-amd64/Packages
+ a7a833e23223dafe5537372388914787b156b7ecd70537dcdde769770e385909    65033 contrib/binary-amd64/Packages.gz
+ 9979608b93622d99f0b8bd1143c8ba7039a5d23bd3fcebb8331a1b4b531c96d2    53848 contrib/binary-amd64/Packages.xz
+ ac431981025d5f227db0cd0de78e9a3ef1fa80d83e058170cf35db6de3d75f64      119 contrib/binary-amd64/Release
+ d41e6c8a98e0045bee8d94cfdcd69e6ea5f4413b348c20e8a00f3f7c65e7d86a   206484 contrib/binary-arm64/Packages
+ 4c2fa4e7553e716711669fb444cd43e900933b8c4e4e24ca414ae4442289fd39    57984 contrib/binary-arm64/Packages.gz
+ 4a626305e0a35511d96428c6f8b6c6378312c010ebe58d66f15b3e127a61eed6    48352 contrib/binary-arm64/Packages.xz
+ 70e934cc62b621a5fd53ea9aeec19d6d672109eda7402667e912d546bcbc72a9      119 contrib/binary-arm64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 contrib/debian-installer/binary-all/Packages
+ f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec       20 contrib/debian-installer/binary-all/Packages.gz
+ 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275       32 contrib/debian-installer/binary-all/Packages.xz
+ a51aa983aa4be25f0d3446a8adc85c7f2697f1a6a1a1c1f44ab37ba7145eaad4      117 contrib/debian-installer/binary-all/Release
+ 8a0cf75b847f5d616b9d8c8070d0c2e23ef41baa91747a4d17d9435451959e10      526 contrib/debian-installer/binary-amd64/Packages
+ a31a153aca13f370d40f00f08583fe87915272d962eccdd80780cced4bec543f      373 contrib/debian-installer/binary-amd64/Packages.gz
+ 70fcd0ee50d8ae68b17c1b6972ba43e3b80ea8df06141fadd73043035faba3af      448 contrib/debian-installer/binary-amd64/Packages.xz
+ ac431981025d5f227db0cd0de78e9a3ef1fa80d83e058170cf35db6de3d75f64      119 contrib/debian-installer/binary-amd64/Release
+ e3125ef6890d722ac5917c161b17a940d509a2ddb33fc6e4016f48202b766674      526 contrib/debian-installer/binary-arm64/Packages
+ 7d7e9366418daf48575a28d92ce02e91bae8b16e4a1ba731c443f54eb806585c      374 contrib/debian-installer/binary-arm64/Packages.gz
+ 9446b92a9714b3032f2e445ded1f0b9cd85f3b3b24b11a766452af6afe928a98      448 contrib/debian-installer/binary-arm64/Packages.xz
+ 70e934cc62b621a5fd53ea9aeec19d6d672109eda7402667e912d546bcbc72a9      119 contrib/debian-installer/binary-arm64/Release
+ 6ccbd6cb28358cc782dad67307567eef7c905bdabdd979d2ed99339bb75541ab   244444 contrib/dep11/Components-amd64.yml
+ 7ef613eb4f212cae2bc7593a194cc197b1144b958353bb845dd0598e97ea6061    48760 contrib/dep11/Components-amd64.yml.gz
+ 2768f42a598f9072067b292c8bc07e5e79ac7d788471547c054cceef5ac2a191    41520 contrib/dep11/Components-amd64.yml.xz
+ 29744cb3a0993de9732c86b110719efd408ac6fa2838cd44b6d702ef24bfc040   217299 contrib/dep11/Components-arm64.yml
+ 1d30cb7b44ae15bb6ccbbbb54451fa4b7ba43494495275016b64e0136f262249    42875 contrib/dep11/Components-arm64.yml.gz
+ c0c8cf19ea565372111e5484b0e29815064137f242c81f933240b1edcc1efe3e    37020 contrib/dep11/Components-arm64.yml.xz
+ 3de3c16970f7d93a87757558e2842ce6fdba4450556bb21bdf76a5e2b3dc6fa4   214747 contrib/dep11/Components-armel.yml
+ 9faa9519711c203fb67f06dfbbabe1e97d31d8cd9cd015bcb04fc1a77e4c0854    42197 contrib/dep11/Components-armel.yml.gz
+ 16af941bfcf883a6730a2a77aadc6fda5bbb32de589d8ff2309f439d0bc978c0    36592 contrib/dep11/Components-armel.yml.xz
+ 5062f81801e0b27ede931a9e1047fdb1cd9f30327bd56146b8f4179623ae8e3b   214747 contrib/dep11/Components-armhf.yml
+ 5d44198650968122c75b31846f8dfa088848c6b59b5f825e0fb94ae9679ba4b7    42710 contrib/dep11/Components-armhf.yml.gz
+ 691b943e6b6916ba86c0f113059626ad67ec0b786e719f6cbbdf750a9bba3632    36604 contrib/dep11/Components-armhf.yml.xz
+ 3cc3f9a9d41b57402b821ec8f719e8f85fc9b15c823912f1ab70cbe6d8a13bf4   346624 contrib/dep11/icons-128x128.tar
+ 07033cf9c1c63969b2a98fae18c26d0d35269c39f7bc5f89f43ac83cb6a382b6   280933 contrib/dep11/icons-128x128.tar.gz
+ de7068f73140eef1e545ca6206b5e3233dbfb40f4c65669b3be0e0d72d1826c4    96768 contrib/dep11/icons-48x48.tar
+ 81ad5b73f0d1d0f6d6327fff54f1a0eaa51807eccb0435b0ebf100cb34a51628    60139 contrib/dep11/icons-48x48.tar.gz
+ 2a419a92ca5430ab3654234c01a59f1b60d02947c1e02c04ef59812ca3b2e95e   176640 contrib/dep11/icons-64x64.tar
+ 4ae1d582b30a0260abee24fbf1c61f8e3daa023dbf2916c1727725eafa9e94ef   131889 contrib/dep11/icons-64x64.tar.gz
+ 760d7b8233613d232bb1fff11cfd1d00604c9ab663120b42214aae0870c4df4f   191402 contrib/i18n/Translation-en
+ c0e8807f0addedab9315e4db162c2f528507a50a314cb24dc99a91c3cc89f97b    49612 contrib/i18n/Translation-en.xz
+ 0eaf1c4f8230bd6efb68581c49fd5e9929b81304b51169986eef769f840d31ef      120 contrib/source/Release
+ 5d6690ff33e84f224a82db20ef5eb9b53c351f2d211736c18fcebc7dd4981732   216746 contrib/source/Sources
+ e0b7bcad53fc53876ecb1a999d2c104ea05bc7a8caab93b2ed5f9364f5a99e09    62166 contrib/source/Sources.gz
+ d0ec315ba17b9de6732ab2cd6fbe1b3da0790006235b6e9c10747fdad9ddceef    52276 contrib/source/Sources.xz
+ 454956e3f66fb08b4b89bf27e3bf13bccc17d9b235ada0f9d103535c75c075bd 582568083 main/Contents-all
+ a538530e7ae504d97795eeb86d3d34ab012f7cf01c7d2ccc056e3de45719d67c 37698665 main/Contents-all.gz
+ b629bfb916258e12f200d42b3e0825496b5c69061e1ecc63a3c8eb5bec401bb3 168887686 main/Contents-amd64
+ 247002c4d4c2c47a49b59cebe1c731db727e213a4f913ab925778f6139c1f183 12616299 main/Contents-amd64.gz
+ 0130920eb0bbb0aaa1b6788edb54d95481b411900a646dd0fe0df064b9933754 169709560 main/Contents-arm64
+ 9ed0a27bf6101d6a748c9e5b423d2c72df6913cda573d23e8c37eff0a636493b 12556641 main/Contents-arm64.gz
+ 2bbbea2b83e96b1be1c6b2b87b26469c3d34e810fbbf209d7aa0bd3a6144a409 906893484 main/Contents-source
+ 124858f5c6057e53697b00473f22f866031fa0dbe216cf183cdf7d3cd0bd6bc6 93929067 main/Contents-source.gz
+ 9249b0287ad63f8c128e6c2220cc0897a238e809f4ae045da0e839241813fdb5   157957 main/Contents-udeb-all
+ 944e2be2b328cec2e1993f6ce9eed74de3cc35f0ca6ab4aca63273e4d54d4d54    13790 main/Contents-udeb-all.gz
+ 7cce62255edd9851ec238151b3edd4df0f71daca9c282c41b625d3ade91c0da8   590726 main/Contents-udeb-amd64
+ 65b830d50f4f22286dac382461ca281845df5b972ca53cbc997333164785dcba    40746 main/Contents-udeb-amd64.gz
+ 01ea642ee00f05581ba80d8a5f65db3d26bd52960f196b5458e2ad3a680e4a5f   998906 main/Contents-udeb-arm64
+ f05a7979a08c0ea22db1ed009e0dd80504dadc862145cb403ee3a1fab2a4bc4b    64653 main/Contents-udeb-arm64.gz
+ 8ab2898b7027bca62909795787bdb978a98344ca8638df6d0a38d58efc562f80 24057421 main/binary-all/Packages
+ aef602b154c8c49cdb5c19c76fd477d10e53fcdae1841c82f9e9f77ac20cd0cb  6098963 main/binary-all/Packages.gz
+ 80efcceffd36baa0d8a6ea0a2e1f1bb5407b54fd2274e6540d4e4a8af3e72012  4532188 main/binary-all/Packages.xz
+ 0648c28ba95741e9285a89563e34d93b0b3d2d3994720ad514cbbc2a1f04cab1      114 main/binary-all/Release
+ d305786c73b1f22e18d20fbbdc44ebf87859aa855fc0d256495909bf3f2d0d09 56537483 main/binary-amd64/Packages
+ cd1cbf56449bb9e69a0d772fd6f6688ae70b9861908c73a01a08ceba362c608b 13322554 main/binary-amd64/Packages.gz
+ b41e4b9bd79ca009afe7fb329b16bc305f1c7acab9ea6ce4f571526ede926547  9670764 main/binary-amd64/Packages.xz
+ 759cef6bd3e035a3476ee9ff7bd0c79c53efa3a1ca0d41c36e0fb8b118a2df6d      116 main/binary-amd64/Release
+ 843347f3fb07a78198897070f6a0fad777390a15a476d0cb23a14d5150d51054 56079402 main/binary-arm64/Packages
+ 49d695d08ac5ebbda20f49dd5ea620963c78a2a226d82363f297c3dc24b22ec2 13230043 main/binary-arm64/Packages.gz
+ 26538de7144bee5272d161aecd966d3bd3abf6f3a17ad2d8215dfa6b97b70420  9606892 main/binary-arm64/Packages.xz
+ 765a6f8c6c97190625d297546eb34927922af34303b3c4bd4ce7aade2fba5a1b      116 main/binary-arm64/Release
+ 02202dfc0b3fdf13dff04205662c15c889a8ab7a7993d9f73b714e71892a8a18    61092 main/debian-installer/binary-all/Packages
+ d507911bb070f5be81f527db336775404b4ebb4dc4882ff73a7b86d57a6049bc    16811 main/debian-installer/binary-all/Packages.gz
+ b94902244b3f2cfc89f0f1f2f9ae335bdd908af143da763f86e0bbee82a9cd51    14560 main/debian-installer/binary-all/Packages.xz
+ 0648c28ba95741e9285a89563e34d93b0b3d2d3994720ad514cbbc2a1f04cab1      114 main/debian-installer/binary-all/Release
+ 7b6625c9455470ce07d7a3c2be650e38a0eed2d7f58706a22c196f20aaee24c2   263177 main/debian-installer/binary-amd64/Packages
+ 9c77bfb258194acc654b1f8e750dfc6d046d3148fe4ade8645ee8c3bde0a653b    65722 main/debian-installer/binary-amd64/Packages.gz
+ 321fac62886f4f4e0adaf42e73bbddc575eb9d74860bfa0fefe4f29e1b90968f    53836 main/debian-installer/binary-amd64/Packages.xz
+ 759cef6bd3e035a3476ee9ff7bd0c79c53efa3a1ca0d41c36e0fb8b118a2df6d      116 main/debian-installer/binary-amd64/Release
+ ae66ae3ffc30562fa660acef7567f09144b0da772d577eb9dd2c4e63258c1cb6   248462 main/debian-installer/binary-arm64/Packages
+ 4ca98a38da117ae68acda8c9e916e4e2cdeff209e5048f966323c4990d811a58    63402 main/debian-installer/binary-arm64/Packages.gz
+ b18889f3d6bf06e9dfe6e3e2081ac877d8ff0c03a1cd504e0448114dade59c0b    52092 main/debian-installer/binary-arm64/Packages.xz
+ 765a6f8c6c97190625d297546eb34927922af34303b3c4bd4ce7aade2fba5a1b      116 main/debian-installer/binary-arm64/Release
+ b40fc7d6f3590453006447331cb8a11c81ef2b794f89bf98d80bb7e4f78964ed 23550748 main/dep11/Components-amd64.yml
+ 782b0a6b58526790764605aabf84356d1cfa7fda562d1b154ccb8998da73a9a2  8046370 main/dep11/Components-amd64.yml.gz
+ b83cbd215ad81aa853d2e66f0076e583d97288b25bd226e1ba34a7e3f76aa436  5174736 main/dep11/Components-amd64.yml.xz
+ 0db2d9b40717655978ad394a17e0c2b40d8d7d298bc785d637092150a7b39897 21061302 main/dep11/Components-arm64.yml
+ 9797654b50046477f5cb903fef204b109cb02d7c0dc6f756c75c180e3d7edf58  7149653 main/dep11/Components-arm64.yml.gz
+ 510cf0f3381b09b1da9ebdcc91d5b001e50269de858bca21f6f395d1bdd3ba36  4620200 main/dep11/Components-arm64.yml.xz
+ 686f767f9f494814e1c9200aa19acfc917caf466be270d4ad98a7321aabff457 13167616 main/dep11/icons-128x128.tar
+ 119b4883c42f3b2e0a1b554b6cf8e2040e4409127b3996e68266929e003c18f9 11402866 main/dep11/icons-128x128.tar.gz
+ 5bf2060b3ce000ad5ed7d350c3de9e9631d16103716e8c2d14c7334c0f488f3f  5147136 main/dep11/icons-48x48.tar
+ 34229c4e72965bda0ae015e9c5a11feed4e14e085c808c95fa6bde6d335f78e3  3625827 main/dep11/icons-48x48.tar.gz
+ 8bd0a39340fcb67e0b1693a005758824594961ee0eb2837bf24bf890a9b27773  9545216 main/dep11/icons-64x64.tar
+ 6a514c7aaf483480828d4f078cc51b3a8f36d75745389522e57105a50eb17ed9  7366548 main/dep11/icons-64x64.tar.gz
+ e10be646ea1ef11e3b7bcf4d31cde19d1c6fc6fbb780bc75b15a60fd1703787f     4598 main/i18n/Translation-ar
+ 4ff617f956c3f74c2f33127fc7287b7e90706b5f289584f286532ecbc4013a9d     1635 main/i18n/Translation-ar.bz2
+ e061ee16e4478c39875bc3d977fdd5f880a71a3ea97c9f5119ac127a4305579a     6191 main/i18n/Translation-ca
+ ed06627194c667d774188bcf0d9b859625ec60d2098238ee3c1cd5e1c147c4f7     2673 main/i18n/Translation-ca.bz2
+ a43c52aaf8657d9ecdee158cddfd1e18556c5e61188fbb88645a20a48ed06cf2  1006738 main/i18n/Translation-cs
+ b9b8f776ac2d3010597d81fbe047db63b610e2ef46ad9d6bb07b1bb7c63e2bb1   267975 main/i18n/Translation-cs.bz2
+ 1caa43dbd7e7e57efda698267d97c940775bef225f5823c41328df36959ed8b2 27931875 main/i18n/Translation-da
+ e216ea328fae260b0564f0f6111d97971d7bfbdc338c7cf08661720ff7e10b34  5871810 main/i18n/Translation-da.bz2
+ 8aaa8611f10939376bb88e3278895ff5df036eadd84322950c63b37671f2a3e7  7686094 main/i18n/Translation-de
+ d770db8a3e9d99169f2e0d78f72742431c7cb359064f782c787463bd6f1b1a58  1673278 main/i18n/Translation-de.bz2
+ 284169348b8bd4e0de4cc5641eeb05577e80d2bd736452e454976c052cf3cbe2     1347 main/i18n/Translation-de_DE
+ 481a435ad350105b74c4972859c44f447b7a8b5edea0d42f6dd635792e00a461      830 main/i18n/Translation-de_DE.bz2
+ 474f36221f4c39f4118e87a0a17f3baf80171fcd99779eed202e490c998e56db     2732 main/i18n/Translation-el
+ 6dd5964e8c4ec5aae1ed5a28a3ee90636a30b16afdfbdde20542e5d10c9fdf62     1051 main/i18n/Translation-el.bz2
+ 6acdf4126ea761454542ebaeca5ed8eea377d3973cf21a4801beaba71b2523b0 34831171 main/i18n/Translation-en
+ a1289d2506fe4fb9eed666a9b97bc014ae94a8618aa23f0278a2d9bead3b5890  6483912 main/i18n/Translation-en.xz
+ abccaeb24d409c21b94883b74785053d0f8fad3e94449078ebe92af38861bc5a     2261 main/i18n/Translation-eo
+ 747ab457a83de3b107e25b9cc5536aea2f19e0fe1f08d5357475acea0d788fae     1196 main/i18n/Translation-eo.bz2
+ 9c49c36b6aee4452520be2cf481669161c3416acd7acda62f041a7d1418d7bfa  1188580 main/i18n/Translation-es
+ 5078fd97783271e11146d031d70e73eefd80fadb933e97387ad5785227a7e7c2   278474 main/i18n/Translation-es.bz2
+ f78cb04d9dfe8f72e820d30b8eb2e83dac64ef26ba57e84ebf99f67eeba7397e     7582 main/i18n/Translation-eu
+ 7c0540c325065b216de4710d3176c2011da9723732c77d3ae5af8c1254145ed0     3118 main/i18n/Translation-eu.bz2
+ 1cedd5bdd07fcf787ead7dbd2676a44b7b43be7237370fc1506df13950c717ba   245734 main/i18n/Translation-fi
+ dfa1c33ded6e8e5898b174e46fa7852781423d4eae8e14d8f390161f55eab80c    67510 main/i18n/Translation-fi.bz2
+ 58adc03915e80f42295e79f528fc113f28ea85370a880ef239190524b9e837fb 15200387 main/i18n/Translation-fr
+ 5c5a848f00107ae7df02f419b31499274761df03dbb49fc99574ed150adfd07f  3137367 main/i18n/Translation-fr.bz2
+ ce1a70b1000909a09166e30d574c717f3d60ba173bb65ad65e768374dc73232d     1427 main/i18n/Translation-gl
+ fa1eb924fc1473b81f7790ccd909de1dc274f4f266df8af544261f03e1d21079      824 main/i18n/Translation-gl.bz2
+ 2bc650d850f9b5a96603e9097ff6a9701d37bfcc5ffb188e3b3976091e9ef181    27275 main/i18n/Translation-hr
+ 2fc84d7a2a6adc77f70faf9d44b4c7bae45cdad7a36e274a6316e3aaa2e0c5e0     4258 main/i18n/Translation-hr.bz2
+ a845b4021138a09aa091d3fd57381e34770e2ba9d8ddde94e57616b77b106188    58372 main/i18n/Translation-hu
+ f9e9b6029bf7eb6fa255fdb3ba0dcfe0fc33e64ed755145e5991264e03817d5c    20093 main/i18n/Translation-hu.bz2
+ c3e3d51b1aca0489b91f204afca10830b8d58e571c10a80202243b5b93eb4f66     3352 main/i18n/Translation-id
+ 210703f8aed2e5878063be79391ae413e91d24a0acd45684d7652a5130a8fe41     1517 main/i18n/Translation-id.bz2
+ 148b843891ac5c429d94ac0c082a91f5c560ef6e90591fa86b4d45ab79565ebc 29210026 main/i18n/Translation-it
+ 3beafa1cb1b61565012911e9d11e7e13df1b230a1abf2db86cf9ad172bba26a0  5702821 main/i18n/Translation-it.bz2
+ c4b1bb34298be845bcccf43d437e8912618375ae4c57858048a2974b0a5533a2  3973943 main/i18n/Translation-ja
+ 7245fa81813f8e6837e1d5c2fecaff9c55f3ea3ccf0d903da85d7ddb456f6bfe   701079 main/i18n/Translation-ja.bz2
+ b4d899c568ccb1a4ed95220cb16ea71a871db1d12f2a3f65f431af8738d07fca    10499 main/i18n/Translation-km
+ 046506424d849db2b7ec9832f9cedb204b82c068da9c924b9ed33e4b736ddf8f     2153 main/i18n/Translation-km.bz2
+ 1fc5e0f4ff584a438f6bea0acfff28efaa91bda0f378bbb5c60227091beb7225  2729122 main/i18n/Translation-ko
+ 6639b90a6e12d7429ede2cfe4e7bd9e0f915e1a442dd0bdcb03d7a7dac458e18   607302 main/i18n/Translation-ko.bz2
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 main/i18n/Translation-ml
+ d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058       14 main/i18n/Translation-ml.bz2
+ 16be336bba03786450a43321709eca2fce7fa7b50a135a97da71e16eb5e7d60b     1193 main/i18n/Translation-nb
+ fdec5fc00fe2d0e3c7730462f95273492d278eb8a6957c1b437969833366c217      738 main/i18n/Translation-nb.bz2
+ 4419ad59c83b449e7d624edc3916b5db43a44e908213f707980145ec4ba06c73   156725 main/i18n/Translation-nl
+ 2a26f3a1f7dece0b148e1d4a4d2fc86b034c0877f6abdc522a5e7213024bfaf6    41036 main/i18n/Translation-nl.bz2
+ ca08851bed9f6c7a10f54402de52f607a9525961feb871d6d78d127e536b387d  4649024 main/i18n/Translation-pl
+ 73530c090fb6970f9bcf7d55fc2be6eaaf029780ef7d47303f606ad9b5826cab  1002810 main/i18n/Translation-pl.bz2
+ d2dd6b585ef0be1c83423dec81759833d14b9694980785f524222daba37083d7   934589 main/i18n/Translation-pt
+ 331aa2a5951a55da76512375cd9eaf820e4a1bba84bb94f51f61a8f35e427db5   230432 main/i18n/Translation-pt.bz2
+ 23c3b2559ec6de2697088e24485714a2039ba998f6e4499f00761b81de06837f      336 main/i18n/Translation-pt_AO
+ a2a19c81386819c63f502f9b9778fbfd1dcd4938efd6a17660b3d9aeffc92ece      272 main/i18n/Translation-pt_AO.bz2
+ c7e1f7822fab5ee73478ec5b54bc2a5a2650432216cbc079f9b3467d776b0f4a  4644045 main/i18n/Translation-pt_BR
+ 6bf22b6d1dbd17ed3c790a54287927bab99d8cced2d6602e1659abf9ce21cb1c  1111913 main/i18n/Translation-pt_BR.bz2
+ c90708ca8975ced4acf4be98a4ac1f5c8092fd826b4d928e35c3650e705553d4     1717 main/i18n/Translation-ro
+ 35f2449dba7bd93e0aece908f4c4de53cc864a48c8f7aeaa5a64f67384e1bcda      982 main/i18n/Translation-ro.bz2
+ 9b74051efa6e08b588ce5928dab159e928fdc43514cb446bc2dfbbd6d8b9bc8d  2895513 main/i18n/Translation-ru
+ 385d727babcd8f303a3375a3bb3a6660d2be598c48327e4f494d68080f7a4452   461529 main/i18n/Translation-ru.bz2
+ bbe968d76bb3386faa0a7208d88e47cf6dffdbed0e36227ece78be0cb6c40e47  5312486 main/i18n/Translation-sk
+ c93069887dfeef75958267c643d46d97ccc55de2b0c68225a16fd8722252e26c  1132618 main/i18n/Translation-sk.bz2
+ 568e829f0b371dcd023dcdde5081c98917e84013aecbf039b36e9de907b1ebd1   287224 main/i18n/Translation-sr
+ bb4d558703a8e3227cf0797f1cd2b6162217972ec9eb45259e6a7a306323dba0    49859 main/i18n/Translation-sr.bz2
+ 00c374b825a7752774e2926aabe014fe265e88785b186542f890c7ef39e8d774    80838 main/i18n/Translation-sv
+ ebdcacb793a42b05640e97bd7ce76566dd54a33954f694b92d0600f46e702138    25953 main/i18n/Translation-sv.bz2
+ 65af6910e625453707b8424c884532e6391b6884364f4bd92ca17346ed9a7cb2    13740 main/i18n/Translation-tr
+ a6f366715aafbb0f1225bb534d9d4eda0b308a501b18259173eb12dd44d94b52     5081 main/i18n/Translation-tr.bz2
+ 37a06358d23c4ab3290d8ef56493d1a54800f02e2062d480567479d3b93e5d36  3277545 main/i18n/Translation-uk
+ 7853aa37961fb43f3a5bd0ca62c4122ad2d885e290c71645d62bf78d266fb63f   497679 main/i18n/Translation-uk.bz2
+ 65016be7273bdb48a339c9be65306d9eb981f052e3c488b38aaf564bee8d8bc9    18473 main/i18n/Translation-vi
+ 8ba9a02775c8d9b24ac4835da0ef785f64d62cd60526744cb7513cbe5a03f21b     5653 main/i18n/Translation-vi.bz2
+ 7133134d1b1b6c869b4b700fed9778e93a0b774391402ad3399e9ff46984efff     2007 main/i18n/Translation-zh
+ 8cbeadbbcec613b8476f8e2aa40b15772909109e10a83317c111fcf7c28d0219     1215 main/i18n/Translation-zh.bz2
+ 3b48dec9bd9aa9ad1a0195c47e23a4a006b042dd9e10c591b31df277b1702a65   662879 main/i18n/Translation-zh_CN
+ d5b31dd185aea9f0e99c270ae0fd4685aad1d69da7d04d39ff22992bbd0a3540   158803 main/i18n/Translation-zh_CN.bz2
+ 452c8220c4f91610766e808db9a3110afe6bbb059a3b5e1e9051c60747e0687f    33217 main/i18n/Translation-zh_TW
+ 748627b2e1f35b5e493d8e1e48891da4d40cd8abe052fb2921cc26b7cb5dea5d    12582 main/i18n/Translation-zh_TW.bz2
+ 63013554340a06a36de1bb0f1cda30d1502d9d33d0782219fa6cdb391d68eea6    60175 main/installer-amd64/20250803+deb13u4/images/MD5SUMS
+ 0bb5c264d3374a23c9fb89fc818f124441af066fc8349c20a70cb94f39eb9b85    80699 main/installer-amd64/20250803+deb13u4/images/SHA256SUMS
+ dc8359387a9da3df154071399eb6fb542d0d892703c1dfeb2d13b6b0353f3d79    60175 main/installer-amd64/20250803/images/MD5SUMS
+ 0dd31c49b2c5b29005f27f1f2d6a98e61b0b9aa7724b09472e3d12348d5f70dd    80699 main/installer-amd64/20250803/images/SHA256SUMS
+ 63013554340a06a36de1bb0f1cda30d1502d9d33d0782219fa6cdb391d68eea6    60175 main/installer-amd64/current/images/MD5SUMS
+ 0bb5c264d3374a23c9fb89fc818f124441af066fc8349c20a70cb94f39eb9b85    80699 main/installer-amd64/current/images/SHA256SUMS
+ fde9824d5e8bba135b6360c6f6253c135fd63324c25107452b018f694f66ec4a   133944 main/installer-arm64/20250803+deb13u4/images/MD5SUMS
+ 6022de398de429039120e49a99cabd8681e76a5b7433dd1e0d4e5337cc48f6b4   184036 main/installer-arm64/20250803+deb13u4/images/SHA256SUMS
+ 94e1b751a7675af2f98d52cbb49644e4b0345b6d9deb33a2074b2de064458b74   133944 main/installer-arm64/20250803/images/MD5SUMS
+ 48bbf37ff3f82957441f5dab3779357f6eaba80cc5f9bbc6d4d663577a5aa9d5   184036 main/installer-arm64/20250803/images/SHA256SUMS
+ fde9824d5e8bba135b6360c6f6253c135fd63324c25107452b018f694f66ec4a   133944 main/installer-arm64/current/images/MD5SUMS
+ 6022de398de429039120e49a99cabd8681e76a5b7433dd1e0d4e5337cc48f6b4   184036 main/installer-arm64/current/images/SHA256SUMS
+ 982415d7b64ec4f6d4a2e185a2e911a8355989e0bdfafa1c219e9931463acef3      117 main/source/Release
+ a9b9c36b57e3311d3b5dbbaee2340411855243b0c3701131dd5f058d253d614c 57044885 main/source/Sources
+ 56df3eec9fafbfe4cf2aec99b5256dcb4e5e705610395314ab57ba494cbf328f 14129072 main/source/Sources.gz
+ 190d572dd009f53bce3e89e60a3ab1acafbad27e598848d1dc57cd211d0cadbe 10527124 main/source/Sources.xz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEETLUBkCB7R1ij9zp5btDnuCZD4TEFAmm1RckACgkQbtDnuCZD
+4TGHWA//TJR6+zAqzKbViPjHTkbPeDZ0LhRPUKymjyWZMT98IgBOib+SM3OQN9JF
+9lFLMtnAhiZCw9BipvRSOwWBad5JkwKt8cwbmp0YqWNtDCUpwk6OVvsDHdrzuRwH
+J0ezKIZ53XWth4HOYiAyxwJfYHSgFtBUKOvMQEDFLVxOWDCsXNEwNs/8hZT5hTym
+z7gvNmPHvDgYcPj+Y2IQIW3G5JwbBkzHrYXnt2PQXRvWryuch+dDkvBOmd1sFCiE
+frBq98Rpy5tHTO20nvxOBUaEqmNBEb7NBQODVURrQ6lcblvHoqneFGhU4Vhb9Eyb
+slG4ZPSMsGoAEvU3MdKMrvUmjvt7gFpHCquVPMqrtkOD5b42dV+QqUlwFdOJfXMO
+RmgWj34/X8mvEF/sk8ytnb4Wmyrw5Lnb+7Uu6cnV4qyw2BFX07FIpbVc0BvLktBo
+KZzUcxx7hlfZCb9CsuA6g4PyuWTe9Y3McZ7a/TV5fbIMBq7U8jsEDwQxoo7QjvpI
+NPk9AxVVhJtvvSqZSyviYqwyrmQNrVeaAVr47yoJ3MDCPxlaWdw+tXqMPr/bVo/s
+kGYiNJeD+SqE7jSrrk42kGpY/T1bx2fQqlw9jEKR94+AFA3xN84KodOubWzX+bb+
+MDyRQb7L4cfQRmuDl83QlP5gD/49Ku0SDmL7NBWfvQTqD5j9EI6JAjMEAQEIAB0W
+IQS45fExdtKnp1IgAoB426O8R+8iZQUCabVFygAKCRB426O8R+8iZb/XD/48rRzB
+LIUu7IXzeKcHQUQWA9RMtjU266OUVHlPOz4tdlUcC/8GsBxLb9VdtiqQkGBsVPfx
+mB/vPpU7TECQ4+w7kFznnJIuxV0jix0svQ8oU52TFCI+4+t4BdJ/wxtWiEc4dVzi
+jattiBp/MLsAoFRqyG2rZVSmND4X0c9blenByIf1SOB+nTIwfnQnS55Eoz7aQR7a
+K/fiwD2UalGkuFNQR52jdhwJJm+0cp17RsRoVluQkm2KUS44z2LTX+0xyMtDqtwX
+fxCfsHJ1Ku1pp0Lk5lgLgW2xVXjkQ7G8qL2JbFyAGunckFYwg4sYmJ3P+HsiXfuw
+x+ox3/AMdMj8G+pJuTKGkCu5JWTwlRvIXvhdldkvK915iHOC4yff7PZLP+K8yWp6
+B81hpd9wkpe87ZWHq0cxkkAeiALzlzoZnfa1hla6z1Qc0eBegPtN2ZiTrZqbcFEI
+WADq5SIhq0waivWEiRx/Bzzl3TOC9SeLrFOuyYxotNs7R72yPQhgBw5rDwAnXEqc
+rI9OndcfsDoO8phIl0dNgnvbUjRJzFO5EzKm9FrKiSXM2Ipx/icS/m45aCYYNtKV
+pS4SlBlMUVgA8i8kSteDihfgDFjOPuydkmpZxUdx/bSelFul1MDTGvSCgmCWJfbN
+gyNwbZXG42M3rxyWu/e01mO00tqJ5Bnu0DYXZ4h1BAEWCAAdFiEEQVh/fbjHdLzP
+ExQWdi9noLLDneQFAmm1RjsACgkQdi9noLLDneTVMgD/cAeMqZs7kCCRtof4Vyf+
+DjMjqKfMEkMh/rJeEHc3lG0A/2TwKCA5krhVUhOWLpCPIjdxJOGIsVqRgfsvJqNS
+ql8D
+=wdJv
+-----END PGP SIGNATURE-----
