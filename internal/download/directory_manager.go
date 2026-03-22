@@ -60,7 +60,8 @@ func (dm *DirectoryManager) FileExists(relPath string, size int64) (bool, error)
 
 // StageMetadata writes a metadata file to the staging directory.
 // The file is added to a stack so that Commit moves files in reverse order.
-func (dm *DirectoryManager) StageMetadata(relPath string, body io.Reader) error {
+// If expectedChecksum is non-empty, the SHA-256 of the written data is verified.
+func (dm *DirectoryManager) StageMetadata(relPath string, expectedChecksum string, body io.Reader) error {
 	fullPath, err := dm.resolveStagingPath(relPath)
 	if err != nil {
 		return err
@@ -68,8 +69,14 @@ func (dm *DirectoryManager) StageMetadata(relPath string, body io.Reader) error 
 	if err := os.MkdirAll(filepath.Dir(fullPath), 0o755); err != nil {
 		return fmt.Errorf("creating staging subdirectory for %q: %w", relPath, err)
 	}
-	if err := writeFile(fullPath, body); err != nil {
-		return fmt.Errorf("staging metadata %q: %w", relPath, err)
+	if expectedChecksum == "" {
+		if err := writeFile(fullPath, body); err != nil {
+			return fmt.Errorf("staging metadata %q: %w", relPath, err)
+		}
+	} else {
+		if err := writeFileVerified(fullPath, expectedChecksum, body); err != nil {
+			return fmt.Errorf("staging metadata %q: %w", relPath, err)
+		}
 	}
 	dm.staged = append(dm.staged, relPath)
 	return nil
@@ -213,4 +220,29 @@ func writeFile(path string, r io.Reader) error {
 		err = closeErr
 	}
 	return err
+}
+
+// writeFileVerified creates or overwrites a file, verifying its SHA-256 checksum.
+// If the checksum does not match, the file is removed and an error is returned.
+func writeFileVerified(path string, expectedChecksum string, r io.Reader) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	hasher := sha256.New()
+	w := io.MultiWriter(f, hasher)
+	_, err = io.Copy(w, r)
+	if closeErr := f.Close(); closeErr != nil && err == nil {
+		err = closeErr
+	}
+	if err != nil {
+		os.Remove(path)
+		return err
+	}
+	actualChecksum := hex.EncodeToString(hasher.Sum(nil))
+	if !strings.EqualFold(actualChecksum, expectedChecksum) {
+		os.Remove(path)
+		return fmt.Errorf("checksum mismatch: expected %s, got %s", expectedChecksum, actualChecksum)
+	}
+	return nil
 }

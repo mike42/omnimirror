@@ -1,13 +1,17 @@
 package apt
 
 import (
+	"compress/bzip2"
+	"compress/gzip"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
 
 	"github.com/mike42/omnimirror/internal/download"
+	"github.com/ulikunitz/xz"
 	"pault.ag/go/debian/control"
 )
 
@@ -30,20 +34,23 @@ func Mirror(cfg MirrorConfig) error {
 		return fmt.Errorf("creating directory manager: %w", err)
 	}
 
+	dl := download.NewDownloadList(dm)
+
 	// Phase 1: Stage metadata for all suites.
 	for _, suite := range cfg.Suites {
-		if err := stageSuiteMetadata(dm, baseURL, suite, cfg); err != nil {
+		if err := stageSuiteMetadata(dm, dl, baseURL, suite, cfg); err != nil {
 			return fmt.Errorf("staging metadata for suite %q: %w", suite, err)
 		}
 	}
 
-	// Phase 2: Content download (TODO: cross-suite .deb deduplication).
+	// Phase 2: Download content files.
+	log.Printf("Download list: %d files", dl.Len())
 
 	// Phase 3: Commit all staged metadata.
 	return dm.Commit()
 }
 
-func stageSuiteMetadata(dm *download.DirectoryManager, baseURL, suite string, cfg MirrorConfig) error {
+func stageSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList, baseURL, suite string, cfg MirrorConfig) error {
 	suiteURL := baseURL + "/dists/" + suite
 
 	// Stage release metadata files.
@@ -66,7 +73,13 @@ func stageSuiteMetadata(dm *download.DirectoryManager, baseURL, suite string, cf
 	entries := filterReleaseEntries(release.SHA256, repoArchs, archs, false)
 	entries = filterByComponent(entries, components)
 
-	for _, entry := range entries {
+	// Split entries into compressed and uncompressed files.
+	// Download compressed files first so we can derive uncompressed files
+	// via decompression instead of relying on the server to serve them.
+	compressed, uncompressed := splitByCompression(entries)
+
+	// Stage compressed files first.
+	for _, entry := range compressed {
 		relPath := fmt.Sprintf("dists/%s/%s", suite, entry.Filename)
 		entryURL := suiteURL + "/" + entry.Filename
 		log.Printf("Fetching %s", entryURL)
@@ -76,15 +89,146 @@ func stageSuiteMetadata(dm *download.DirectoryManager, baseURL, suite string, cf
 			log.Printf("Warning: could not fetch %s: %v", entryURL, err)
 			continue
 		}
-		if err := dm.StageMetadata(relPath, body); err != nil {
+		if err := dm.StageMetadata(relPath, entry.Hash, body); err != nil {
 			body.Close()
 			return fmt.Errorf("staging %s: %w", relPath, err)
 		}
 		body.Close()
-
-		_ = entry // TODO: verify file checksum after staging
 	}
 
+	// Stage uncompressed files: prefer decompressing an already-staged
+	// compressed variant over downloading the uncompressed file directly.
+	for _, entry := range uncompressed {
+		relPath := fmt.Sprintf("dists/%s/%s", suite, entry.Filename)
+
+		if stageFromCompressed(dm, relPath, entry.Hash, suite, entry.Filename) {
+			continue
+		}
+
+		// Fall back to downloading directly.
+		entryURL := suiteURL + "/" + entry.Filename
+		log.Printf("Fetching %s", entryURL)
+		body, err := httpGet(entryURL)
+		if err != nil {
+			log.Printf("Warning: could not fetch %s: %v", entryURL, err)
+			continue
+		}
+		if err := dm.StageMetadata(relPath, entry.Hash, body); err != nil {
+			body.Close()
+			return fmt.Errorf("staging %s: %w", relPath, err)
+		}
+		body.Close()
+	}
+
+	// Parse Packages files and collect content to download.
+	for _, comp := range components {
+		for _, arch := range archs {
+			packagesPath := fmt.Sprintf("dists/%s/%s/binary-%s/Packages", suite, comp, arch)
+			if err := collectPackages(dm, dl, packagesPath); err != nil {
+				return fmt.Errorf("collecting packages from %s: %w", packagesPath, err)
+			}
+		}
+	}
+
+	return nil
+}
+
+// compressedExts lists file extensions that indicate compressed metadata files.
+var compressedExts = []string{".gz", ".xz", ".bz2"}
+
+// isCompressedFile reports whether the filename has a known compression extension.
+func isCompressedFile(filename string) bool {
+	for _, ext := range compressedExts {
+		if strings.HasSuffix(filename, ext) {
+			return true
+		}
+	}
+	return false
+}
+
+// splitByCompression partitions entries into compressed and uncompressed files.
+func splitByCompression(entries []control.SHA256FileHash) (compressed, uncompressed []control.SHA256FileHash) {
+	for _, entry := range entries {
+		if isCompressedFile(entry.Filename) {
+			compressed = append(compressed, entry)
+		} else {
+			uncompressed = append(uncompressed, entry)
+		}
+	}
+	return
+}
+
+// stageFromCompressed attempts to produce an uncompressed staged file by
+// decompressing an already-staged compressed variant. It tries .xz then .bz2
+// then .gz. Returns true if decompression succeeded.
+func stageFromCompressed(dm *download.DirectoryManager, relPath, expectedChecksum, suite, filename string) bool {
+	// Try each compressed variant in preference order.
+	for _, ext := range []string{".xz", ".bz2", ".gz"} {
+		compressedRelPath := fmt.Sprintf("dists/%s/%s%s", suite, filename, ext)
+		rc, err := dm.ReadStagedFile(compressedRelPath)
+		if err != nil {
+			continue
+		}
+		decompressor, err := newDecompressor(rc, ext)
+		if err != nil {
+			rc.Close()
+			continue
+		}
+		if err := dm.StageMetadata(relPath, expectedChecksum, decompressor); err != nil {
+			rc.Close()
+			log.Printf("Warning: decompressing %s failed: %v", compressedRelPath, err)
+			continue
+		}
+		rc.Close()
+		log.Printf("Decompressed %s from %s", relPath, compressedRelPath)
+		return true
+	}
+	return false
+}
+
+// newDecompressor wraps an io.Reader with the appropriate decompression
+// based on the file extension.
+func newDecompressor(r io.Reader, ext string) (io.Reader, error) {
+	switch ext {
+	case ".gz":
+		return gzip.NewReader(r)
+	case ".xz":
+		xzReader, err := xz.NewReader(r)
+		if err != nil {
+			return nil, err
+		}
+		return xzReader, nil
+	case ".bz2":
+		return bzip2.NewReader(r), nil
+	default:
+		return nil, fmt.Errorf("unsupported compression: %s", ext)
+	}
+}
+
+// collectPackages reads a staged Packages file and adds its entries to the download list.
+func collectPackages(dm *download.DirectoryManager, dl *download.DownloadList, packagesPath string) error {
+	rc, err := dm.ReadStagedFile(packagesPath)
+	if err != nil {
+		log.Printf("Warning: could not read staged %s: %v", packagesPath, err)
+		return nil
+	}
+	defer rc.Close()
+
+	pkgs, err := parsePackages(rc)
+	if err != nil {
+		return fmt.Errorf("parsing %s: %w", packagesPath, err)
+	}
+
+	for _, pkg := range pkgs {
+		if pkg.Filename == "" {
+			continue
+		}
+		if _, err := dl.Add(pkg.Filename, pkg.Size, pkg.SHA256); err != nil {
+			return fmt.Errorf("adding %s to download list: %w", pkg.Filename, err)
+		}
+	}
+
+	log.Printf("Parsed %s: %d packages", packagesPath, len(pkgs))
 	return nil
 }
 
@@ -108,7 +252,7 @@ func fetchAndStageRelease(dm *download.DirectoryManager, suiteURL, suite string)
 
 	// Stage the raw InRelease file (with PGP signature intact).
 	inReleasePath := fmt.Sprintf("dists/%s/InRelease", suite)
-	if err := dm.StageMetadata(inReleasePath, strings.NewReader(string(inReleaseData))); err != nil {
+	if err := dm.StageMetadata(inReleasePath, "", strings.NewReader(string(inReleaseData))); err != nil {
 		return nil, fmt.Errorf("staging InRelease: %w", err)
 	}
 
@@ -128,7 +272,7 @@ func fetchAndStageRelease(dm *download.DirectoryManager, suiteURL, suite string)
 			log.Printf("Optional file %s not available: %v", file, err)
 			continue
 		}
-		if err := dm.StageMetadata(relPath, body); err != nil {
+		if err := dm.StageMetadata(relPath, "", body); err != nil {
 			body.Close()
 			log.Printf("Warning: could not stage %s: %v", file, err)
 			continue
@@ -149,6 +293,48 @@ type Release struct {
 	Date          string
 	MD5Sum        []control.MD5FileHash    `delim:"\n" strip:"\n\r\t "`
 	SHA256        []control.SHA256FileHash `delim:"\n" strip:"\n\r\t "`
+}
+
+// PackageEntry holds the fields from a Packages file entry that are needed for downloading.
+type PackageEntry struct {
+	Filename string
+	Size     int64
+	SHA256   string
+}
+
+// packageParagraph is used to decode a Packages file entry via the control decoder.
+// Size is a string here because the control decoder does not support int64 directly.
+type packageParagraph struct {
+	Filename string
+	Size     string
+	SHA256   string
+}
+
+// parsePackages parses a Packages file and returns the list of package entries.
+func parsePackages(r io.Reader) ([]PackageEntry, error) {
+	decoder, err := control.NewDecoder(r, nil)
+	if err != nil {
+		return nil, fmt.Errorf("creating decoder: %w", err)
+	}
+	var entries []PackageEntry
+	for {
+		var para packageParagraph
+		if err := decoder.Decode(&para); err == io.EOF {
+			break
+		} else if err != nil {
+			return nil, fmt.Errorf("decoding package entry: %w", err)
+		}
+		size, err := strconv.ParseInt(para.Size, 10, 64)
+		if err != nil {
+			return nil, fmt.Errorf("parsing size %q for %s: %w", para.Size, para.Filename, err)
+		}
+		entries = append(entries, PackageEntry{
+			Filename: para.Filename,
+			Size:     size,
+			SHA256:   para.SHA256,
+		})
+	}
+	return entries, nil
 }
 
 // parseRelease parses an InRelease or Release file, handling PGP signatures.

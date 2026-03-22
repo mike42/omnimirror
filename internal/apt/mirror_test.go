@@ -1,12 +1,23 @@
 package apt
 
 import (
+	"bytes"
+	"compress/gzip"
+	"crypto/sha256"
+	"encoding/hex"
+	"io"
 	"os"
 	"strings"
 	"testing"
 
+	"github.com/mike42/omnimirror/internal/download"
 	"pault.ag/go/debian/control"
 )
+
+func sha256hex(data []byte) string {
+	h := sha256.Sum256(data)
+	return hex.EncodeToString(h[:])
+}
 
 func TestParseInRelease(t *testing.T) {
 	data, err := os.ReadFile("../../tests/resources/apt/mozilla_InRelease")
@@ -75,6 +86,118 @@ func TestParseRelease(t *testing.T) {
 	}
 }
 
+func TestParsePackages(t *testing.T) {
+	f, err := os.Open("../../tests/resources/apt/mozilla_Packages")
+	if err != nil {
+		t.Fatalf("opening test file: %v", err)
+	}
+	defer f.Close()
+
+	pkgs, err := parsePackages(f)
+	if err != nil {
+		t.Fatalf("parsePackages: %v", err)
+	}
+
+	if len(pkgs) == 0 {
+		t.Fatal("no packages parsed")
+	}
+
+	// Check the first entry (firefox 137.0.2~build1).
+	first := pkgs[0]
+	if first.Filename != "pool/mozilla/firefox_137.0.2~build1_amd64_496ec9ec52c5a34445b787823e662b93.deb" {
+		t.Errorf("Filename = %q", first.Filename)
+	}
+	if first.Size != 74268490 {
+		t.Errorf("Size = %d, want 74268490", first.Size)
+	}
+	if first.SHA256 != "b25eb80845a286c74ba7acf8f3e88c92a4226420085ede19cb5358c155d6eb68" {
+		t.Errorf("SHA256 = %q", first.SHA256)
+	}
+
+	// Verify all entries have required fields.
+	for i, pkg := range pkgs {
+		if pkg.Filename == "" {
+			t.Errorf("pkgs[%d]: empty Filename", i)
+		}
+		if pkg.Size == 0 {
+			t.Errorf("pkgs[%d] (%s): zero Size", i, pkg.Filename)
+		}
+		if pkg.SHA256 == "" {
+			t.Errorf("pkgs[%d] (%s): empty SHA256", i, pkg.Filename)
+		}
+	}
+}
+
+func TestSplitByCompression(t *testing.T) {
+	entries := []control.SHA256FileHash{
+		{FileHash: control.FileHash{Filename: "main/binary-amd64/Packages"}},
+		{FileHash: control.FileHash{Filename: "main/binary-amd64/Packages.xz"}},
+		{FileHash: control.FileHash{Filename: "main/binary-amd64/Packages.gz"}},
+		{FileHash: control.FileHash{Filename: "main/binary-amd64/Packages.bz2"}},
+		{FileHash: control.FileHash{Filename: "main/dep11/icons-48x48.tar"}},
+		{FileHash: control.FileHash{Filename: "main/Contents-amd64.gz"}},
+	}
+
+	compressed, uncompressed := splitByCompression(entries)
+
+	if len(compressed) != 4 {
+		t.Errorf("expected 4 compressed, got %d", len(compressed))
+	}
+	if len(uncompressed) != 2 {
+		t.Errorf("expected 2 uncompressed, got %d", len(uncompressed))
+	}
+
+	// Verify uncompressed entries.
+	for _, e := range uncompressed {
+		if isCompressedFile(e.Filename) {
+			t.Errorf("unexpected compressed file in uncompressed list: %s", e.Filename)
+		}
+	}
+}
+
+func TestStageFromCompressed(t *testing.T) {
+	dir := t.TempDir()
+	dm, err := download.NewDirectoryManager(dir)
+	if err != nil {
+		t.Fatalf("NewDirectoryManager: %v", err)
+	}
+
+	// Create gzip-compressed data.
+	original := []byte("Package: foo\nVersion: 1.0\n")
+	var buf bytes.Buffer
+	gw := gzip.NewWriter(&buf)
+	gw.Write(original)
+	gw.Close()
+
+	gzChecksum := sha256hex(buf.Bytes())
+	uncompressedChecksum := sha256hex(original)
+
+	// Stage the .gz file.
+	if err := dm.StageMetadata("dists/test/main/binary-amd64/Packages.gz", gzChecksum, bytes.NewReader(buf.Bytes())); err != nil {
+		t.Fatalf("staging .gz: %v", err)
+	}
+
+	// stageFromCompressed should decompress it.
+	ok := stageFromCompressed(dm, "dists/test/main/binary-amd64/Packages", uncompressedChecksum, "test", "main/binary-amd64/Packages")
+	if !ok {
+		t.Fatal("stageFromCompressed returned false")
+	}
+
+	// Read back the uncompressed file.
+	rc, err := dm.ReadStagedFile("dists/test/main/binary-amd64/Packages")
+	if err != nil {
+		t.Fatalf("reading decompressed file: %v", err)
+	}
+	defer rc.Close()
+	got, err := io.ReadAll(rc)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Equal(got, original) {
+		t.Fatalf("content mismatch: got %q, want %q", got, original)
+	}
+}
+
 func TestFilterReleaseEntries(t *testing.T) {
 	data, err := os.ReadFile("../../tests/resources/apt/debian_InRelease")
 	if err != nil {
@@ -98,6 +221,7 @@ func TestFilterReleaseEntries(t *testing.T) {
 		assertContains(t, entries, "main/Contents-amd64")
 		assertContains(t, entries, "main/dep11/Components-amd64.yml")
 		assertContains(t, entries, "main/dep11/icons-48x48.tar")
+		assertContains(t, entries, "main/i18n/Translation-en")
 
 		assertNotContains(t, entries, "main/binary-arm64/Packages")
 		assertNotContains(t, entries, "main/binary-i386/Packages")
@@ -105,7 +229,6 @@ func TestFilterReleaseEntries(t *testing.T) {
 		assertNotContains(t, entries, "main/dep11/Components-arm64.yml")
 		assertNotContains(t, entries, "main/source/Sources")
 		assertNotContains(t, entries, "main/Contents-source")
-		assertNotContains(t, entries, "main/i18n/Translation-en")
 		assertNotContains(t, entries, "main/debian-installer/binary-amd64/Packages")
 		assertNotContains(t, entries, "main/Contents-udeb-amd64")
 	})

@@ -89,10 +89,10 @@ func TestStageMetadataAndCommit(t *testing.T) {
 	inRelease := []byte("InRelease content")
 	packages := []byte("Packages content")
 
-	if err := dm.StageMetadata("dists/trixie/InRelease", bytes.NewReader(inRelease)); err != nil {
+	if err := dm.StageMetadata("dists/trixie/InRelease", "", bytes.NewReader(inRelease)); err != nil {
 		t.Fatalf("StageMetadata InRelease: %v", err)
 	}
-	if err := dm.StageMetadata("dists/trixie/main/binary-amd64/Packages", bytes.NewReader(packages)); err != nil {
+	if err := dm.StageMetadata("dists/trixie/main/binary-amd64/Packages", "", bytes.NewReader(packages)); err != nil {
 		t.Fatalf("StageMetadata Packages: %v", err)
 	}
 
@@ -145,10 +145,10 @@ func TestCommitOrder(t *testing.T) {
 	}
 
 	// Stage files in order: InRelease first, then Packages.
-	if err := dm.StageMetadata("dists/trixie/InRelease", strings.NewReader("a")); err != nil {
+	if err := dm.StageMetadata("dists/trixie/InRelease", "", strings.NewReader("a")); err != nil {
 		t.Fatal(err)
 	}
-	if err := dm.StageMetadata("dists/trixie/main/binary-amd64/Packages", strings.NewReader("b")); err != nil {
+	if err := dm.StageMetadata("dists/trixie/main/binary-amd64/Packages", "", strings.NewReader("b")); err != nil {
 		t.Fatal(err)
 	}
 
@@ -180,7 +180,7 @@ func TestReadStagedFile(t *testing.T) {
 	}
 
 	content := []byte("staged content here")
-	if err := dm.StageMetadata("dists/trixie/InRelease", bytes.NewReader(content)); err != nil {
+	if err := dm.StageMetadata("dists/trixie/InRelease", "", bytes.NewReader(content)); err != nil {
 		t.Fatal(err)
 	}
 
@@ -196,6 +196,32 @@ func TestReadStagedFile(t *testing.T) {
 	}
 	if !bytes.Equal(got, content) {
 		t.Fatalf("content mismatch: got %q, want %q", got, content)
+	}
+}
+
+func TestStageMetadataChecksum(t *testing.T) {
+	dir := t.TempDir()
+	dm, err := NewDirectoryManager(filepath.Join(dir, "mirror"))
+	if err != nil {
+		t.Fatalf("NewDirectoryManager: %v", err)
+	}
+
+	content := []byte("verified content")
+	checksum := sha256hex(content)
+
+	// Correct checksum should succeed.
+	if err := dm.StageMetadata("dists/trixie/main/binary-amd64/Packages", checksum, bytes.NewReader(content)); err != nil {
+		t.Fatalf("StageMetadata with valid checksum: %v", err)
+	}
+
+	// Wrong checksum should fail.
+	badChecksum := sha256hex([]byte("different"))
+	err = dm.StageMetadata("dists/trixie/main/binary-arm64/Packages", badChecksum, bytes.NewReader(content))
+	if err == nil {
+		t.Fatal("expected error for bad checksum")
+	}
+	if !strings.Contains(err.Error(), "checksum mismatch") {
+		t.Fatalf("unexpected error: %v", err)
 	}
 }
 
@@ -310,7 +336,7 @@ func TestPathTraversal(t *testing.T) {
 			if err == nil {
 				t.Error("FileExists should reject path traversal")
 			}
-			err = dm.StageMetadata(path, strings.NewReader("x"))
+			err = dm.StageMetadata(path, "", strings.NewReader("x"))
 			if err == nil {
 				t.Error("StageMetadata should reject path traversal")
 			}
