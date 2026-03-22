@@ -61,8 +61,10 @@ func stageSuiteMetadata(dm *download.DirectoryManager, baseURL, suite string, cf
 
 	log.Printf("Staging metadata for %s: components=%v, architectures=%v", suite, components, archs)
 
-	// We will download all metadata, TODO filter this..
-	entries := release.SHA256
+	// Filter metadata entries for selected architectures and components.
+	repoArchs := strings.Fields(release.Architectures)
+	entries := filterReleaseEntries(release.SHA256, repoArchs, archs, false)
+	entries = filterByComponent(entries, components)
 
 	for _, entry := range entries {
 		relPath := fmt.Sprintf("dists/%s/%s", suite, entry.Filename)
@@ -163,56 +165,6 @@ func parseRelease(data []byte) (*Release, error) {
 	return &release, nil
 }
 
-// filterReleaseEntries returns the SHA256 entries that match the given components and architectures.
-func filterReleaseEntries(entries []control.SHA256FileHash, components, archs []string) []control.SHA256FileHash {
-	compSet := make(map[string]struct{}, len(components))
-	for _, c := range components {
-		compSet[c] = struct{}{}
-	}
-	archSet := make(map[string]struct{}, len(archs))
-	for _, a := range archs {
-		archSet[a] = struct{}{}
-	}
-
-	var result []control.SHA256FileHash
-	for _, e := range entries {
-		parts := strings.SplitN(e.Filename, "/", 2)
-		if len(parts) < 2 {
-			continue
-		}
-		comp := parts[0]
-		rest := parts[1]
-
-		// Component must match.
-		if _, ok := compSet[comp]; !ok {
-			continue
-		}
-
-		// Exclude source entries.
-		// TODO should be configurable
-		if strings.HasPrefix(rest, "source/") {
-			continue
-		}
-
-		// Filter out architecture-specific entries for things we are not mirroring
-		if strings.HasPrefix(rest, "binary-") {
-			// Extract arch from "binary-{arch}/..."
-			archAndFile := strings.TrimPrefix(rest, "binary-")
-			slashIdx := strings.Index(archAndFile, "/")
-			if slashIdx < 0 {
-				continue
-			}
-			arch := archAndFile[:slashIdx]
-			if _, ok := archSet[arch]; !ok {
-				continue
-			}
-		}
-
-		result = append(result, e)
-	}
-	return result
-}
-
 // filterOrAll returns the filter list if non-empty, otherwise returns all available values.
 func filterOrAll(filter, available []string) []string {
 	if len(filter) == 0 {
@@ -229,6 +181,88 @@ func ensureContains(slice []string, val string) []string {
 		}
 	}
 	return append(slice, val)
+}
+
+// filterReleaseEntries filters metadata entries based on architecture selection.
+// repoArchs is the full list of architectures in the repository.
+// selectedArchs is the subset to include (should already contain "all").
+// includeExtras controls whether source and debian-installer are mirrored
+func filterReleaseEntries(entries []control.SHA256FileHash, repoArchs, selectedArchs []string, includeExtras bool) []control.SHA256FileHash {
+	// Build list of architectures to exclude.
+	selected := make(map[string]bool, len(selectedArchs))
+	for _, a := range selectedArchs {
+		selected[a] = true
+	}
+	var excluded []string
+	for _, a := range repoArchs {
+		if !selected[a] {
+			excluded = append(excluded, a)
+		}
+	}
+	// Work-around: Debian trixie has eg. 'contrib/dep11/Components-mipsel.yml', while 'mipsel' is not in the list of
+	// architectures in the Release file.
+	//   Architectures: all amd64 arm64 armel armhf i386 ppc64el riscv64 s390x
+	for _, a := range [...]string{"mipsel", "mips64el"} {
+		if !selected[a] {
+			excluded = append(excluded, a)
+		}
+	}
+
+	var result []control.SHA256FileHash
+	for _, entry := range entries {
+		path := entry.Filename
+
+		// Skip extras (source, debian-installer, i18n) unless requested.
+		if !includeExtras && isExtraEntry(path) {
+			continue
+		}
+
+		// Skip entries for excluded architectures.
+		if isExcludedByArch(path, excluded) {
+			continue
+		}
+
+		result = append(result, entry)
+	}
+	return result
+}
+
+// isExtraEntry returns true if the path is a source, debian-installer, or i18n entry.
+func isExtraEntry(path string) bool {
+	// Split off the component prefix (e.g. "main/") to get the category path.
+	_, after, _ := strings.Cut(path, "/")
+	return strings.HasPrefix(after, "source/") ||
+		strings.HasPrefix(after, "Contents-source") ||
+		strings.HasPrefix(after, "debian-installer/") ||
+		strings.HasPrefix(after, "Contents-udeb-")
+}
+
+// isExcludedByArch returns true if the path references one of the excluded architectures.
+func isExcludedByArch(path string, excluded []string) bool {
+	for _, arch := range excluded {
+		if strings.Contains(path, "/binary-"+arch+"/") ||
+			strings.Contains(path, "Contents-"+arch) ||
+			strings.Contains(path, "installer-"+arch) ||
+			strings.Contains(path, "Contents-udeb-"+arch) ||
+			strings.Contains(path, "Components-"+arch+".") {
+			return true
+		}
+	}
+	return false
+}
+
+// filterByComponent returns only entries whose path starts with one of the given components.
+func filterByComponent(entries []control.SHA256FileHash, components []string) []control.SHA256FileHash {
+	var result []control.SHA256FileHash
+	for _, entry := range entries {
+		for _, c := range components {
+			if strings.HasPrefix(entry.Filename, c+"/") {
+				result = append(result, entry)
+				break
+			}
+		}
+	}
+	return result
 }
 
 // httpGet performs an HTTP GET and returns the response body.
