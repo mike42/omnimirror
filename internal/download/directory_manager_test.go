@@ -153,13 +153,14 @@ func TestCommitOrder(t *testing.T) {
 	}
 
 	// The staged list should reflect insertion order.
-	if len(dm.staged) != 2 {
-		t.Fatalf("expected 2 staged files, got %d", len(dm.staged))
+	staged := dm.StagedFiles()
+	if len(staged) != 2 {
+		t.Fatalf("expected 2 staged files, got %d", len(staged))
 	}
-	if dm.staged[0] != "dists/trixie/InRelease" {
+	if staged[0].RelPath != "dists/trixie/InRelease" {
 		t.Fatalf("expected InRelease first in staged list")
 	}
-	if dm.staged[1] != "dists/trixie/main/binary-amd64/Packages" {
+	if staged[1].RelPath != "dists/trixie/main/binary-amd64/Packages" {
 		t.Fatalf("expected Packages second in staged list")
 	}
 
@@ -172,7 +173,7 @@ func TestCommitOrder(t *testing.T) {
 	}
 }
 
-func TestReadStagedFile(t *testing.T) {
+func TestReadMetadataFile(t *testing.T) {
 	dir := t.TempDir()
 	dm, err := NewDirectoryManager(filepath.Join(dir, "mirror"))
 	if err != nil {
@@ -185,9 +186,9 @@ func TestReadStagedFile(t *testing.T) {
 	}
 
 	// Read it back.
-	rc, err := dm.ReadStagedFile("dists/trixie/InRelease")
+	rc, err := dm.ReadMetadataFile("dists/trixie/InRelease")
 	if err != nil {
-		t.Fatalf("ReadStagedFile: %v", err)
+		t.Fatalf("ReadMetadataFile: %v", err)
 	}
 	defer rc.Close()
 	got, err := io.ReadAll(rc)
@@ -209,9 +210,16 @@ func TestStageMetadataChecksum(t *testing.T) {
 	content := []byte("verified content")
 	checksum := sha256hex(content)
 
-	// Correct checksum should succeed.
+	// Correct checksum should succeed and be recorded.
 	if err := dm.StageMetadata("dists/trixie/main/binary-amd64/Packages", checksum, bytes.NewReader(content)); err != nil {
 		t.Fatalf("StageMetadata with valid checksum: %v", err)
+	}
+	staged := dm.StagedFiles()
+	if len(staged) != 1 {
+		t.Fatalf("expected 1 staged file, got %d", len(staged))
+	}
+	if staged[0].Checksum != checksum {
+		t.Errorf("stored checksum = %q, want %q", staged[0].Checksum, checksum)
 	}
 
 	// Wrong checksum should fail.
@@ -223,18 +231,135 @@ func TestStageMetadataChecksum(t *testing.T) {
 	if !strings.Contains(err.Error(), "checksum mismatch") {
 		t.Fatalf("unexpected error: %v", err)
 	}
+
+	// No checksum provided — should compute and store it.
+	other := []byte("other content")
+	if err := dm.StageMetadata("dists/trixie/InRelease", "", bytes.NewReader(other)); err != nil {
+		t.Fatalf("StageMetadata without checksum: %v", err)
+	}
+	staged = dm.StagedFiles()
+	if len(staged) != 2 {
+		t.Fatalf("expected 2 staged files, got %d", len(staged))
+	}
+	expectedChecksum := sha256hex(other)
+	if staged[1].Checksum != expectedChecksum {
+		t.Errorf("computed checksum = %q, want %q", staged[1].Checksum, expectedChecksum)
+	}
 }
 
-func TestReadStagedFileRejectsUnstaged(t *testing.T) {
+func TestReadMetadataFileRejectsUnknown(t *testing.T) {
 	dir := t.TempDir()
 	dm, err := NewDirectoryManager(filepath.Join(dir, "mirror"))
 	if err != nil {
 		t.Fatalf("NewDirectoryManager: %v", err)
 	}
 
-	_, err = dm.ReadStagedFile("dists/trixie/InRelease")
+	_, err = dm.ReadMetadataFile("dists/trixie/InRelease")
 	if err == nil {
-		t.Fatal("expected error for unstaged file")
+		t.Fatal("expected error for unknown file")
+	}
+}
+
+func TestKeepExistingMetadata(t *testing.T) {
+	dir := t.TempDir()
+	mirrorDir := filepath.Join(dir, "mirror")
+	dm, err := NewDirectoryManager(mirrorDir)
+	if err != nil {
+		t.Fatalf("NewDirectoryManager: %v", err)
+	}
+
+	// Create a file in the mirror directory.
+	content := []byte("existing Packages content")
+	checksum := sha256hex(content)
+	relPath := "dists/trixie/main/binary-amd64/Packages.xz"
+	fullPath := filepath.Join(mirrorDir, relPath)
+	if err := os.MkdirAll(filepath.Dir(fullPath), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(fullPath, content, 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	// Matching checksum — should keep it.
+	kept, err := dm.KeepExistingMetadata(relPath, checksum)
+	if err != nil {
+		t.Fatalf("KeepExistingMetadata: %v", err)
+	}
+	if !kept {
+		t.Fatal("expected file to be kept")
+	}
+	if len(dm.ContentFiles()) != 1 {
+		t.Fatalf("expected 1 content file, got %d", len(dm.ContentFiles()))
+	}
+	if dm.ContentFiles()[0].Checksum != checksum {
+		t.Errorf("content checksum = %q, want %q", dm.ContentFiles()[0].Checksum, checksum)
+	}
+
+	// Wrong checksum — should not keep it.
+	kept, err = dm.KeepExistingMetadata(relPath, sha256hex([]byte("wrong")))
+	if err != nil {
+		t.Fatalf("KeepExistingMetadata wrong checksum: %v", err)
+	}
+	if kept {
+		t.Fatal("expected file not to be kept with wrong checksum")
+	}
+
+	// Empty checksum — should not keep it.
+	kept, err = dm.KeepExistingMetadata(relPath, "")
+	if err != nil {
+		t.Fatalf("KeepExistingMetadata empty checksum: %v", err)
+	}
+	if kept {
+		t.Fatal("expected file not to be kept with empty checksum")
+	}
+
+	// Missing file — should not keep it.
+	kept, err = dm.KeepExistingMetadata("dists/trixie/nonexistent", checksum)
+	if err != nil {
+		t.Fatalf("KeepExistingMetadata missing: %v", err)
+	}
+	if kept {
+		t.Fatal("expected missing file not to be kept")
+	}
+}
+
+func TestReadMetadataFileFromContent(t *testing.T) {
+	dir := t.TempDir()
+	mirrorDir := filepath.Join(dir, "mirror")
+	dm, err := NewDirectoryManager(mirrorDir)
+	if err != nil {
+		t.Fatalf("NewDirectoryManager: %v", err)
+	}
+
+	// Create an existing file and keep it.
+	content := []byte("kept metadata content")
+	checksum := sha256hex(content)
+	relPath := "dists/trixie/main/binary-amd64/Packages"
+	fullPath := filepath.Join(mirrorDir, relPath)
+	if err := os.MkdirAll(filepath.Dir(fullPath), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(fullPath, content, 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	kept, err := dm.KeepExistingMetadata(relPath, checksum)
+	if err != nil || !kept {
+		t.Fatalf("KeepExistingMetadata: kept=%v, err=%v", kept, err)
+	}
+
+	// ReadMetadataFile should find it via the content list.
+	rc, err := dm.ReadMetadataFile(relPath)
+	if err != nil {
+		t.Fatalf("ReadMetadataFile: %v", err)
+	}
+	defer rc.Close()
+	got, err := io.ReadAll(rc)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Equal(got, content) {
+		t.Fatalf("content mismatch: got %q, want %q", got, content)
 	}
 }
 

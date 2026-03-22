@@ -73,10 +73,26 @@ func stageSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList
 	entries := filterReleaseEntries(release.SHA256, repoArchs, archs, false)
 	entries = filterByComponent(entries, components)
 
-	// Split entries into compressed and uncompressed files.
+	// Keep metadata files that already exist in the mirror with the correct
+	// checksum, and collect the remaining entries that need to be downloaded.
+	var needed []control.SHA256FileHash
+	for _, entry := range entries {
+		relPath := fmt.Sprintf("dists/%s/%s", suite, entry.Filename)
+		kept, err := dm.KeepExistingMetadata(relPath, entry.Hash)
+		if err != nil {
+			return fmt.Errorf("checking existing metadata %s: %w", relPath, err)
+		}
+		if kept {
+			log.Printf("Keeping existing %s", relPath)
+			continue
+		}
+		needed = append(needed, entry)
+	}
+
+	// Split remaining entries into compressed and uncompressed files.
 	// Download compressed files first so we can derive uncompressed files
 	// via decompression instead of relying on the server to serve them.
-	compressed, uncompressed := splitByCompression(entries)
+	compressed, uncompressed := splitByCompression(needed)
 
 	// Stage compressed files first.
 	for _, entry := range compressed {
@@ -165,7 +181,7 @@ func stageFromCompressed(dm *download.DirectoryManager, relPath, expectedChecksu
 	// Try each compressed variant in preference order.
 	for _, ext := range []string{".xz", ".bz2", ".gz"} {
 		compressedRelPath := fmt.Sprintf("dists/%s/%s%s", suite, filename, ext)
-		rc, err := dm.ReadStagedFile(compressedRelPath)
+		rc, err := dm.ReadMetadataFile(compressedRelPath)
 		if err != nil {
 			continue
 		}
@@ -207,7 +223,7 @@ func newDecompressor(r io.Reader, ext string) (io.Reader, error) {
 
 // collectPackages reads a staged Packages file and adds its entries to the download list.
 func collectPackages(dm *download.DirectoryManager, dl *download.DownloadList, packagesPath string) error {
-	rc, err := dm.ReadStagedFile(packagesPath)
+	rc, err := dm.ReadMetadataFile(packagesPath)
 	if err != nil {
 		log.Printf("Warning: could not read staged %s: %v", packagesPath, err)
 		return nil

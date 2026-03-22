@@ -184,7 +184,7 @@ func TestStageFromCompressed(t *testing.T) {
 	}
 
 	// Read back the uncompressed file.
-	rc, err := dm.ReadStagedFile("dists/test/main/binary-amd64/Packages")
+	rc, err := dm.ReadMetadataFile("dists/test/main/binary-amd64/Packages")
 	if err != nil {
 		t.Fatalf("reading decompressed file: %v", err)
 	}

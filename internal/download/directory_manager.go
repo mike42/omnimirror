@@ -13,6 +13,12 @@ import (
 
 const stagingDirName = ".staging"
 
+// MirrorDirectoryEntry records a staged metadata file and its SHA-256 checksum.
+type MirrorDirectoryEntry struct {
+	RelPath  string
+	Checksum string
+}
+
 // DirectoryManager manages a mirror directory with staging support.
 //
 // Metadata files are staged to a .staging/ subdirectory and committed in
@@ -21,7 +27,8 @@ const stagingDirName = ".staging"
 type DirectoryManager struct {
 	mirrorDir  string
 	stagingDir string
-	staged     []string // stack of staged metadata relative paths
+	staged     []MirrorDirectoryEntry
+	content    []MirrorDirectoryEntry
 }
 
 // NewDirectoryManager creates a DirectoryManager for the given mirror directory.
@@ -60,7 +67,8 @@ func (dm *DirectoryManager) FileExists(relPath string, size int64) (bool, error)
 
 // StageMetadata writes a metadata file to the staging directory.
 // The file is added to a stack so that Commit moves files in reverse order.
-// If expectedChecksum is non-empty, the SHA-256 of the written data is verified.
+// The SHA-256 checksum is always computed. If expectedChecksum is non-empty,
+// the computed checksum is verified against it.
 func (dm *DirectoryManager) StageMetadata(relPath string, expectedChecksum string, body io.Reader) error {
 	fullPath, err := dm.resolveStagingPath(relPath)
 	if err != nil {
@@ -69,35 +77,78 @@ func (dm *DirectoryManager) StageMetadata(relPath string, expectedChecksum strin
 	if err := os.MkdirAll(filepath.Dir(fullPath), 0o755); err != nil {
 		return fmt.Errorf("creating staging subdirectory for %q: %w", relPath, err)
 	}
-	if expectedChecksum == "" {
-		if err := writeFile(fullPath, body); err != nil {
-			return fmt.Errorf("staging metadata %q: %w", relPath, err)
-		}
-	} else {
-		if err := writeFileVerified(fullPath, expectedChecksum, body); err != nil {
-			return fmt.Errorf("staging metadata %q: %w", relPath, err)
-		}
+	checksum, err := writeFileHashed(fullPath, expectedChecksum, body)
+	if err != nil {
+		return fmt.Errorf("staging metadata %q: %w", relPath, err)
 	}
-	dm.staged = append(dm.staged, relPath)
+	dm.staged = append(dm.staged, MirrorDirectoryEntry{RelPath: relPath, Checksum: checksum})
 	return nil
 }
 
-// ReadStagedFile opens a previously staged metadata file for reading.
-// The relative path must match a file that was staged via StageMetadata;
-// this prevents path traversal through arbitrary paths.
-func (dm *DirectoryManager) ReadStagedFile(relPath string) (io.ReadCloser, error) {
-	if !dm.isStagedFile(relPath) {
-		return nil, fmt.Errorf("file %q was not staged", relPath)
+// StagedFiles returns the list of staged metadata entries with their checksums.
+func (dm *DirectoryManager) StagedFiles() []MirrorDirectoryEntry {
+	return dm.staged
+}
+
+// KeepExistingMetadata checks whether a metadata file already exists in the
+// mirror directory with the expected checksum. If it does, the file is recorded
+// in the content list and true is returned, allowing the caller to skip
+// re-downloading it. If expectedChecksum is empty, the file cannot be verified
+// and false is returned.
+func (dm *DirectoryManager) KeepExistingMetadata(relPath string, expectedChecksum string) (bool, error) {
+	if expectedChecksum == "" {
+		return false, nil
 	}
-	fullPath, err := dm.resolveStagingPath(relPath)
+	fullPath, err := dm.resolveMirrorPath(relPath)
 	if err != nil {
-		return nil, err
+		return false, err
 	}
-	f, err := os.Open(fullPath)
+	checksum, err := checksumFile(fullPath)
 	if err != nil {
-		return nil, fmt.Errorf("opening staged file %q: %w", relPath, err)
+		if errors.Is(err, os.ErrNotExist) {
+			return false, nil
+		}
+		return false, fmt.Errorf("checksumming %q: %w", relPath, err)
 	}
-	return f, nil
+	if !strings.EqualFold(checksum, expectedChecksum) {
+		return false, nil
+	}
+	dm.content = append(dm.content, MirrorDirectoryEntry{RelPath: relPath, Checksum: checksum})
+	return true, nil
+}
+
+// ContentFiles returns the list of pre-existing content entries that were kept.
+func (dm *DirectoryManager) ContentFiles() []MirrorDirectoryEntry {
+	return dm.content
+}
+
+// ReadMetadataFile opens a metadata file for reading. It first checks the
+// staging directory (for newly staged files), then falls back to the mirror
+// directory (for pre-existing files kept via KeepExistingMetadata).
+func (dm *DirectoryManager) ReadMetadataFile(relPath string) (io.ReadCloser, error) {
+	if dm.isStagedFile(relPath) {
+		fullPath, err := dm.resolveStagingPath(relPath)
+		if err != nil {
+			return nil, err
+		}
+		f, err := os.Open(fullPath)
+		if err != nil {
+			return nil, fmt.Errorf("opening staged file %q: %w", relPath, err)
+		}
+		return f, nil
+	}
+	if dm.isContentFile(relPath) {
+		fullPath, err := dm.resolveMirrorPath(relPath)
+		if err != nil {
+			return nil, err
+		}
+		f, err := os.Open(fullPath)
+		if err != nil {
+			return nil, fmt.Errorf("opening existing file %q: %w", relPath, err)
+		}
+		return f, nil
+	}
+	return nil, fmt.Errorf("file %q is not staged or in content list", relPath)
 }
 
 // WriteContentFile writes a content file to the mirror directory.
@@ -152,7 +203,7 @@ func (dm *DirectoryManager) WriteContentFile(relPath string, expectedSize int64,
 // The staging directory is removed after all files are committed.
 func (dm *DirectoryManager) Commit() error {
 	for i := len(dm.staged) - 1; i >= 0; i-- {
-		relPath := dm.staged[i]
+		relPath := dm.staged[i].RelPath
 		srcPath, err := dm.resolveStagingPath(relPath)
 		if err != nil {
 			return err
@@ -202,32 +253,43 @@ func (dm *DirectoryManager) resolveStagingPath(relPath string) (string, error) {
 
 func (dm *DirectoryManager) isStagedFile(relPath string) bool {
 	for _, s := range dm.staged {
-		if s == relPath {
+		if s.RelPath == relPath {
 			return true
 		}
 	}
 	return false
 }
 
-// writeFile creates or overwrites a file with the contents of r.
-func writeFile(path string, r io.Reader) error {
-	f, err := os.Create(path)
-	if err != nil {
-		return err
+func (dm *DirectoryManager) isContentFile(relPath string) bool {
+	for _, s := range dm.content {
+		if s.RelPath == relPath {
+			return true
+		}
 	}
-	_, err = io.Copy(f, r)
-	if closeErr := f.Close(); closeErr != nil && err == nil {
-		err = closeErr
-	}
-	return err
+	return false
 }
 
-// writeFileVerified creates or overwrites a file, verifying its SHA-256 checksum.
-// If the checksum does not match, the file is removed and an error is returned.
-func writeFileVerified(path string, expectedChecksum string, r io.Reader) error {
+// checksumFile computes the SHA-256 checksum of a file on disk.
+func checksumFile(path string) (string, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return "", err
+	}
+	defer f.Close()
+	hasher := sha256.New()
+	if _, err := io.Copy(hasher, f); err != nil {
+		return "", err
+	}
+	return hex.EncodeToString(hasher.Sum(nil)), nil
+}
+
+// writeFileHashed creates or overwrites a file, computing its SHA-256 checksum.
+// If expectedChecksum is non-empty, the computed checksum is verified against it
+// and the file is removed on mismatch. Returns the hex-encoded SHA-256 checksum.
+func writeFileHashed(path string, expectedChecksum string, r io.Reader) (string, error) {
 	f, err := os.Create(path)
 	if err != nil {
-		return err
+		return "", err
 	}
 	hasher := sha256.New()
 	w := io.MultiWriter(f, hasher)
@@ -237,12 +299,12 @@ func writeFileVerified(path string, expectedChecksum string, r io.Reader) error 
 	}
 	if err != nil {
 		os.Remove(path)
-		return err
+		return "", err
 	}
-	actualChecksum := hex.EncodeToString(hasher.Sum(nil))
-	if !strings.EqualFold(actualChecksum, expectedChecksum) {
+	checksum := hex.EncodeToString(hasher.Sum(nil))
+	if expectedChecksum != "" && !strings.EqualFold(checksum, expectedChecksum) {
 		os.Remove(path)
-		return fmt.Errorf("checksum mismatch: expected %s, got %s", expectedChecksum, actualChecksum)
+		return "", fmt.Errorf("checksum mismatch: expected %s, got %s", expectedChecksum, checksum)
 	}
-	return nil
+	return checksum, nil
 }
