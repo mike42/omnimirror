@@ -43,6 +43,11 @@ func Mirror(cfg MirrorConfig) error {
 		}
 	}
 
+	// Ok but bail out if dry run
+	if cfg.DryRun {
+		return dm.Discard()
+	}
+
 	// Phase 2: Download content files.
 	log.Printf("Download list: %d files", dl.Len())
 	for _, entry := range dl.Entries() {

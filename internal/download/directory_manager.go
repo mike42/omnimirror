@@ -238,6 +238,12 @@ func (dm *DirectoryManager) Commit() error {
 	return nil
 }
 
+func (dm *DirectoryManager) Discard() error {
+	// Best-effort removal of staging directory tree.
+	_ = os.RemoveAll(dm.stagingDir)
+	return nil
+}
+
 // writeMirrorChecksums writes a mirror.txt file in the mirror directory
 // containing SHA-256 checksums for all staged and content files, in the
 // format expected by the sha256sum program.
