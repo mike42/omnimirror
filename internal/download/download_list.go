@@ -57,3 +57,12 @@ func (dl *DownloadList) Entries() []DownloadEntry {
 func (dl *DownloadList) Len() int {
 	return len(dl.entries)
 }
+
+// TotalSize returns the sum of all entry sizes in bytes.
+func (dl *DownloadList) TotalSize() int64 {
+	var total int64
+	for _, e := range dl.entries {
+		total += e.Size
+	}
+	return total
+}

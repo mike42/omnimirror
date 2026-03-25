@@ -43,8 +43,10 @@ func Mirror(cfg MirrorConfig) error {
 		}
 	}
 
-	// Ok but bail out if dry run
+	// Do not perform download if dry run
 	if cfg.DryRun {
+		log.Printf("Dry run: %d content files to download (%s)", dl.Len(), formatSize(dl.TotalSize()))
+		// Also do not commit metadata
 		return dm.Discard()
 	}
 
@@ -484,6 +486,26 @@ func filterByComponent(entries []control.SHA256FileHash, components []string) []
 		}
 	}
 	return result
+}
+
+// formatSize returns a human-readable file size string.
+// TODO move this somewhere more generic, I'm sure it will come up for other mirror types
+func formatSize(bytes int64) string {
+	const (
+		mB = 1000 * 1000
+		gB = 1000 * mB
+		tB = 1000 * gB
+	)
+	switch {
+	case bytes >= tB:
+		return fmt.Sprintf("%.1f TB", float64(bytes)/float64(tB))
+	case bytes >= gB:
+		return fmt.Sprintf("%.1f GB", float64(bytes)/float64(gB))
+	case bytes >= mB:
+		return fmt.Sprintf("%.1f MB", float64(bytes)/float64(mB))
+	default:
+		return fmt.Sprintf("%d bytes", bytes)
+	}
 }
 
 // httpGet performs an HTTP GET and returns the response body.

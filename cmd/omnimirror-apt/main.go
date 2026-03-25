@@ -2,9 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-	"net/url"
 	"os"
 	"strings"
 
@@ -73,46 +70,20 @@ func newDownloadCmd() *cobra.Command {
 }
 
 func newServeCmd() *cobra.Command {
-	var (
-		directory   string
-		externalURL string
-		listen      string
-	)
+	var cfg apt.ServeConfig
 
 	cmd := &cobra.Command{
 		Use:   "serve",
 		Short: "Serve a mirrored APT repository over HTTP",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			cmd.SilenceUsage = true
-
-			if externalURL == "" {
-				externalURL = "http://" + listen + "/"
-			}
-
-			u, err := url.Parse(externalURL)
-			if err != nil {
-				return fmt.Errorf("invalid external URL: %w", err)
-			}
-			basePath := u.Path
-			if basePath == "" {
-				basePath = "/"
-			}
-			if !strings.HasSuffix(basePath, "/") {
-				basePath += "/"
-			}
-
-			log.Printf("Serving %s at %s", directory, externalURL)
-
-			fileServer := http.FileServer(http.Dir(directory))
-			http.Handle(basePath, http.StripPrefix(basePath, fileServer))
-
-			return http.ListenAndServe(listen, nil)
+			return apt.Serve(cfg)
 		},
 	}
 
-	cmd.Flags().StringVar(&directory, "directory", "", "Directory containing the mirrored repository to serve.")
-	cmd.Flags().StringVar(&externalURL, "external-url", "", "External URL that clients will use to access this mirror (e.g. http://mirror.debian.mynetwork/debian/). The path component is used as the base path for serving files.")
-	cmd.Flags().StringVar(&listen, "listen", "0.0.0.0:8080", "Address and port to listen on.")
+	cmd.Flags().StringVar(&cfg.Directory, "directory", "", "Directory containing the mirrored repository to serve.")
+	cmd.Flags().StringVar(&cfg.ExternalURL, "external-url", "", "External URL that clients will use to access this mirror (e.g. http://mirror.debian.mynetwork/debian/). The path component is used as the base path for serving files.")
+	cmd.Flags().StringVar(&cfg.Listen, "listen", "0.0.0.0:8080", "Address and port to listen on.")
 	_ = cmd.MarkFlagRequired("directory")
 
 	return cmd

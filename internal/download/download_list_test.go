@@ -72,8 +72,8 @@ func TestDownloadListSkipsExistingFile(t *testing.T) {
 
 	dl := NewDownloadList(dm)
 
-	// File exists with matching size — should be skipped.
-	added, err := dl.Add(relPath, int64(len(content)), "somechecksum")
+	// File exists with matching checksum — should be skipped.
+	added, err := dl.Add(relPath, int64(len(content)), "17a2d72f68df1a0fd263379901ac0ec42417a5af2eb6854a60101ce799086a5d")
 	if err != nil {
 		t.Fatalf("Add existing: %v", err)
 	}
