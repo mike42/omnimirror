@@ -38,19 +38,33 @@ func Mirror(cfg MirrorConfig) error {
 
 	// Phase 1: Stage metadata for all suites.
 	for _, suite := range cfg.Suites {
-		if err := stageSuiteMetadata(dm, dl, baseURL, suite, cfg); err != nil {
-			return fmt.Errorf("staging metadata for suite %q: %w", suite, err)
+		if err := downloadSuiteMetadata(dm, dl, baseURL, suite, cfg); err != nil {
+			return fmt.Errorf("downloading metadata for suite %q: %w", suite, err)
 		}
 	}
 
 	// Phase 2: Download content files.
 	log.Printf("Download list: %d files", dl.Len())
+	for _, entry := range dl.Entries() {
+		entryURL := fmt.Sprintf("%s/%s", baseURL, entry.RelPath)
+		log.Printf("Fetching %s", entryURL)
+		body, err := httpGet(entryURL)
+		if err != nil {
+			log.Printf("Warning: could not fetch %s: %v", entryURL, err)
+			continue
+		}
+		if err := dm.WriteContentFile(entry.RelPath, entry.Size, entry.Checksum, body); err != nil {
+			body.Close()
+			return fmt.Errorf("writing %s: %w", entry.RelPath, err)
+		}
+		body.Close()
+	}
 
 	// Phase 3: Commit all staged metadata.
 	return dm.Commit()
 }
 
-func stageSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList, baseURL, suite string, cfg MirrorConfig) error {
+func downloadSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList, baseURL, suite string, cfg MirrorConfig) error {
 	suiteURL := baseURL + "/dists/" + suite
 
 	// Stage release metadata files.
@@ -66,7 +80,7 @@ func stageSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList
 	// Always include "all" architecture.
 	archs = ensureContains(archs, "all")
 
-	log.Printf("Staging metadata for %s: components=%v, architectures=%v", suite, components, archs)
+	log.Printf("Repository metadata for %s: components=%v, architectures=%v", suite, components, archs)
 
 	// Filter metadata entries for selected architectures and components.
 	repoArchs := strings.Fields(release.Architectures)
@@ -78,7 +92,7 @@ func stageSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList
 	var needed []control.SHA256FileHash
 	for _, entry := range entries {
 		relPath := fmt.Sprintf("dists/%s/%s", suite, entry.Filename)
-		kept, err := dm.KeepExistingMetadata(relPath, entry.Hash)
+		kept, err := dm.KeepExistingFile(relPath, entry.Hash)
 		if err != nil {
 			return fmt.Errorf("checking existing metadata %s: %w", relPath, err)
 		}
@@ -150,7 +164,7 @@ func stageSuiteMetadata(dm *download.DirectoryManager, dl *download.DownloadList
 }
 
 // compressedExts lists file extensions that indicate compressed metadata files.
-var compressedExts = []string{".gz", ".xz", ".bz2"}
+var compressedExts = []string{".xz", ".bz2", ".gz"}
 
 // isCompressedFile reports whether the filename has a known compression extension.
 func isCompressedFile(filename string) bool {

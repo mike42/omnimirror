@@ -6,9 +6,11 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 const stagingDirName = ".staging"
@@ -90,12 +92,12 @@ func (dm *DirectoryManager) StagedFiles() []MirrorDirectoryEntry {
 	return dm.staged
 }
 
-// KeepExistingMetadata checks whether a metadata file already exists in the
+// KeepExistingFile checks whether a file already exists in the
 // mirror directory with the expected checksum. If it does, the file is recorded
 // in the content list and true is returned, allowing the caller to skip
 // re-downloading it. If expectedChecksum is empty, the file cannot be verified
 // and false is returned.
-func (dm *DirectoryManager) KeepExistingMetadata(relPath string, expectedChecksum string) (bool, error) {
+func (dm *DirectoryManager) KeepExistingFile(relPath string, expectedChecksum string) (bool, error) {
 	if expectedChecksum == "" {
 		return false, nil
 	}
@@ -113,6 +115,11 @@ func (dm *DirectoryManager) KeepExistingMetadata(relPath string, expectedChecksu
 	if !strings.EqualFold(checksum, expectedChecksum) {
 		return false, nil
 	}
+	if dm.isContentFile(relPath) {
+		// already on the list: the caller should not be re-checking the same file repeatedly.
+		log.Printf("Warning: we checked whether file %q was already in the mirror more than once. This is probably a bug.", relPath)
+		return true, nil
+	}
 	dm.content = append(dm.content, MirrorDirectoryEntry{RelPath: relPath, Checksum: checksum})
 	return true, nil
 }
@@ -124,7 +131,7 @@ func (dm *DirectoryManager) ContentFiles() []MirrorDirectoryEntry {
 
 // ReadMetadataFile opens a metadata file for reading. It first checks the
 // staging directory (for newly staged files), then falls back to the mirror
-// directory (for pre-existing files kept via KeepExistingMetadata).
+// directory (for pre-existing files kept via KeepExistingFile).
 func (dm *DirectoryManager) ReadMetadataFile(relPath string) (io.ReadCloser, error) {
 	if dm.isStagedFile(relPath) {
 		fullPath, err := dm.resolveStagingPath(relPath)
@@ -194,13 +201,16 @@ func (dm *DirectoryManager) WriteContentFile(relPath string, expectedSize int64,
 	if err := os.Rename(tmpPath, mirrorPath); err != nil {
 		return fmt.Errorf("moving content file %q into mirror: %w", relPath, err)
 	}
+	// Record on file list for mirror
+	dm.content = append(dm.content, MirrorDirectoryEntry{RelPath: relPath, Checksum: actualChecksum})
 	return nil
 }
 
 // Commit moves staged metadata files from the staging directory into the
 // mirror directory. Files are committed in reverse stage order (last staged
 // is moved first), so that top-level index files are updated last.
-// The staging directory is removed after all files are committed.
+// After all files are copied into the mirror proper, a file is written containing
+// SHA-256 checksums in sha256sum format, and the staging directory is removed.
 func (dm *DirectoryManager) Commit() error {
 	for i := len(dm.staged) - 1; i >= 0; i-- {
 		relPath := dm.staged[i].RelPath
@@ -219,9 +229,33 @@ func (dm *DirectoryManager) Commit() error {
 			return fmt.Errorf("committing %q: %w", relPath, err)
 		}
 	}
+	if err := dm.writeMirrorChecksums(); err != nil {
+		return fmt.Errorf("writing mirror checksums: %w", err)
+	}
 	dm.staged = nil
 	// Best-effort removal of staging directory tree.
 	_ = os.RemoveAll(dm.stagingDir)
+	return nil
+}
+
+// writeMirrorChecksums writes a mirror.txt file in the mirror directory
+// containing SHA-256 checksums for all staged and content files, in the
+// format expected by the sha256sum program.
+func (dm *DirectoryManager) writeMirrorChecksums() error {
+	var lines []string
+	lines = append(lines, "# updated: "+time.Now().UTC().Format(time.RFC3339))
+	// TODO sort these by name so that they can be compared more easily via diff.
+	for _, entry := range dm.staged {
+		lines = append(lines, entry.Checksum+"  "+entry.RelPath)
+	}
+	for _, entry := range dm.content {
+		lines = append(lines, entry.Checksum+"  "+entry.RelPath)
+	}
+	checksumPath := filepath.Join(dm.mirrorDir, "mirror.txt")
+	data := strings.Join(lines, "\n") + "\n"
+	if err := os.WriteFile(checksumPath, []byte(data), 0o644); err != nil {
+		return err
+	}
 	return nil
 }
 

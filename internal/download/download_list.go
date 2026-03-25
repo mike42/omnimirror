@@ -30,7 +30,8 @@ func (dl *DownloadList) Add(relPath string, size int64, checksum string) (bool, 
 	if dl.seen[relPath] {
 		return false, nil
 	}
-	exists, err := dl.dm.FileExists(relPath, size)
+
+	exists, err := dl.dm.KeepExistingFile(relPath, checksum)
 	if err != nil {
 		return false, err
 	}

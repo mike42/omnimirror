@@ -281,9 +281,9 @@ func TestKeepExistingMetadata(t *testing.T) {
 	}
 
 	// Matching checksum — should keep it.
-	kept, err := dm.KeepExistingMetadata(relPath, checksum)
+	kept, err := dm.KeepExistingFile(relPath, checksum)
 	if err != nil {
-		t.Fatalf("KeepExistingMetadata: %v", err)
+		t.Fatalf("KeepExistingFile: %v", err)
 	}
 	if !kept {
 		t.Fatal("expected file to be kept")
@@ -296,27 +296,27 @@ func TestKeepExistingMetadata(t *testing.T) {
 	}
 
 	// Wrong checksum — should not keep it.
-	kept, err = dm.KeepExistingMetadata(relPath, sha256hex([]byte("wrong")))
+	kept, err = dm.KeepExistingFile(relPath, sha256hex([]byte("wrong")))
 	if err != nil {
-		t.Fatalf("KeepExistingMetadata wrong checksum: %v", err)
+		t.Fatalf("KeepExistingFile wrong checksum: %v", err)
 	}
 	if kept {
 		t.Fatal("expected file not to be kept with wrong checksum")
 	}
 
 	// Empty checksum — should not keep it.
-	kept, err = dm.KeepExistingMetadata(relPath, "")
+	kept, err = dm.KeepExistingFile(relPath, "")
 	if err != nil {
-		t.Fatalf("KeepExistingMetadata empty checksum: %v", err)
+		t.Fatalf("KeepExistingFile empty checksum: %v", err)
 	}
 	if kept {
 		t.Fatal("expected file not to be kept with empty checksum")
 	}
 
 	// Missing file — should not keep it.
-	kept, err = dm.KeepExistingMetadata("dists/trixie/nonexistent", checksum)
+	kept, err = dm.KeepExistingFile("dists/trixie/nonexistent", checksum)
 	if err != nil {
-		t.Fatalf("KeepExistingMetadata missing: %v", err)
+		t.Fatalf("KeepExistingFile missing: %v", err)
 	}
 	if kept {
 		t.Fatal("expected missing file not to be kept")
@@ -343,9 +343,9 @@ func TestReadMetadataFileFromContent(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	kept, err := dm.KeepExistingMetadata(relPath, checksum)
+	kept, err := dm.KeepExistingFile(relPath, checksum)
 	if err != nil || !kept {
-		t.Fatalf("KeepExistingMetadata: kept=%v, err=%v", kept, err)
+		t.Fatalf("KeepExistingFile: kept=%v, err=%v", kept, err)
 	}
 
 	// ReadMetadataFile should find it via the content list.
