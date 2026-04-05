@@ -93,6 +93,38 @@ Other things to think about:
   - https://popcon.debian.org/
   - Packages also have a Priority and Section, inclusion as a dependency of a task* package could be a good way to identify useful things
   - If A depends B, then B could be downloaded first also.
-- Ubuntu LaunchPad has an API: https://api.launchpad.net/devel/
+- Ubuntu LaunchPad has an API: 
 - Ubuntu is eg. `plucky`, then `plucky-backports`, `plucky-proposed`, `plucky-security`, , `plucky-updates`.
 - Debian is eg. `bookworm`, then `bookworm-backports-sloppy`, `bookworm-backports`, `bookworm-proposed-updates`, `bookworm-updates`.
+
+## flatpak
+
+- Ecosystem: Various desktop Linux
+- Terminology: Flapak has 'Repository', the central one being Flathub.
+- Flatpak API is a front-end for an ostree repo
+- Existing tool would be [flatpak/flat-manager](https://github.com/flatpak/flat-manager) (requires postgres database)
+- `libostree` (has infrequently updated [ostreedev/ostree-go](https://github.com/ostreedev/ostree-go) bindings)
+- On Debian at least, GNOME install will have `libostree-1-1` by default.
+  - `apt-cache rdepends` shows the chain is `gnome-control-center` -> `malcontent-gui` -> `libmalcontent-ui-1-1` -> `libflatpak0` -> `libostree-1-1`
+- `.flatpakref` for apps looks interesting.
+- Prior art: https://jrehkemper.de/content/linux/flatpak/setup-a-local-offline-mirror-for-flatpaks/
+- Possible approaches: OCI images, create-usb, etc.
+
+## Building docs
+
+The `docs/` directory will hold documentation in markdown format.
+
+The following commands will build the docs as a static HTML site, in the `site/` directory.
+
+```
+python3 -m venv venv/
+./venv/bin/pip3 install -r requirements_docs.txt
+./venv/bin/mkdocs build
+```
+
+Or if writing, this will serve the docs locally and reload them on change.
+
+```
+./venv/bin/mkdocs serve --open --livereload
+```
+
